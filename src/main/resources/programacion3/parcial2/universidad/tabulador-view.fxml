@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="programacion3.parcial2.universidad.viewController.TabuladorViewController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programacion3.parcial2.universidad.viewController.TabuladorViewController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Estudiantes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 
+                <children>
+                  <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
+                    <items>
+                      <fx:include source="estudiantes-view.fxml" />
+                    </items>
+                  </SplitPane>
+                </children>
+
+              </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Profesores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+
+                <children>
+                  <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
+                    <items>
+                      <fx:include source="profesores-view.fxml" />
+                    </items>
+                  </SplitPane>
+                </children>
+
+              </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Materias">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+
+                  <children>
+                    <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
+                      <items>
+                        <fx:include source="materias-view.fxml" />
+                      </items>
+                    </SplitPane>
+                  </children>
+
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Asignación de Materias">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+
+                  <children>
+                    <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
+                      <items>
+                        <fx:include source="asignacion-view.fxml" />
+                      </items>
+                    </SplitPane>
+                  </children>
+
+                </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
