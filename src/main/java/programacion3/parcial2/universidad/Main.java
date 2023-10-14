@@ -6,10 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import programacion3.parcial2.universidad.model.Universidad;
 
 import java.io.IOException;
 
 public class Main extends Application {
+
+    Universidad universidad = new Universidad();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
@@ -27,7 +30,7 @@ public class Main extends Application {
             Scene scene = new Scene(root);
             Stage newStage = new Stage();
             newStage.centerOnScreen();
-            newStage.setTitle("Universidad del Quindío | Inicio");
+            newStage.setTitle("Universidad del Quindío | usuario: " + universidad.usuarioProperties());
             newStage.setResizable(false);
             newStage.setScene(scene);
             newStage.show();
