@@ -10,7 +10,7 @@ public abstract class Persona {
     private Sexo sexo;
     private Integer edad;
     private String correo;
-    private Integer telefono;
+    private String telefono;
 
     public Persona(){
 
@@ -64,11 +64,11 @@ public abstract class Persona {
         this.correo = correo;
     }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

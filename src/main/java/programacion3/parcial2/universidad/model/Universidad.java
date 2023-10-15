@@ -1,9 +1,38 @@
 package programacion3.parcial2.universidad.model;
 
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Universidad {
 
+    private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+
+    public ArrayList<Estudiante> getListaEstudiantes() {
+        return listaEstudiantes;
+    }
+
+    public void agregarEstudiante(Estudiante nuevoEstudiante) throws Exception{
+        getListaEstudiantes().add(nuevoEstudiante);
+    }
+
+    public boolean verificarEstudianteExistente(String codigo) throws Exception {
+        if(estudianteExiste(codigo)){
+            throw new Exception("El estudiante con código: "+codigo+" ya existe");
+        }else{
+            return false;
+        }
+    }
+
+    public boolean estudianteExiste(String codigo) {
+        boolean estudianteEncontrado = false;
+        for (Estudiante estudiante : getListaEstudiantes()) {
+            if(estudiante.getCodigo().equalsIgnoreCase(codigo)){
+                estudianteEncontrado = true;
+                break;
+            }
+        }
+        return estudianteEncontrado;
+    }
 
     public boolean comprobarAcceso(String usuario, String password){
         boolean continuar = false;
