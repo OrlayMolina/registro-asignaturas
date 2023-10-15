@@ -1,4 +1,4 @@
 package programacion3.parcial2.universidad.viewController;
 
-public class AsignacionViewController {
+public class AsignacionEstudiantesViewController {
 }

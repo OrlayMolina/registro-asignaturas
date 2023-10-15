@@ -44,3 +44,11 @@ oct. 15, 2023 12:14:19 A. M. programacion3.parcial2.universidad.util.ArchivoUti
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
 oct. 15, 2023 12:17:41 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 6:35:44 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 6:52:47 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 6:58:01 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 7:00:30 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15

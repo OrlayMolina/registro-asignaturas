@@ -18,7 +18,6 @@ import java.util.function.Predicate;
 public class EstudiantesViewController {
 
     EstudianteController estudianteControllerService;
-
     Universidad universidad;
     ObservableList<EstudianteDto> listaEstudiantes = FXCollections.observableArrayList();
     ObservableList<String> listaGenero = FXCollections.observableArrayList();
