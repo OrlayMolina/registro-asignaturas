@@ -76,3 +76,25 @@ oct. 15, 2023 8:44:36 A. M. programacion3.parcial2.universidad.util.ArchivoUtil
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
 oct. 15, 2023 8:47:42 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Creación de un profesor, acción realizada por Orlay,Profesor creado,2023-10-15
+oct. 15, 2023 9:28:12 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 11:39:39 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 11:42:59 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 11:43:37 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un materia, acción realizada por Orlay,Materia creado,2023-10-15
+oct. 15, 2023 11:45:19 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Materia eliminado, acción realizada por Orlay,Materia eliminado,2023-10-15
+oct. 15, 2023 11:46:11 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un materia, acción realizada por Orlay,Materia creado,2023-10-15
+oct. 15, 2023 11:46:29 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Materia actualizado, acción realizada por Orlay,Materia actualizado,2023-10-15
+oct. 15, 2023 11:47:38 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un materia, acción realizada por Orlay,Materia creado,2023-10-15
+oct. 15, 2023 11:48:13 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un materia, acción realizada por Orlay,Materia creado,2023-10-15
+oct. 15, 2023 11:49:04 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un materia, acción realizada por Orlay,Materia creado,2023-10-15
+oct. 15, 2023 12:21:09 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15

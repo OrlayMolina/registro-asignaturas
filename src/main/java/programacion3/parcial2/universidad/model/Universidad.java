@@ -1,6 +1,7 @@
 package programacion3.parcial2.universidad.model;
 
 import programacion3.parcial2.universidad.exception.EstudianteException;
+import programacion3.parcial2.universidad.exception.MateriaException;
 import programacion3.parcial2.universidad.exception.ProfesorException;
 
 import java.util.ArrayList;
@@ -11,12 +12,18 @@ public class Universidad {
     private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
     private ArrayList<Profesor> listaProfesores = new ArrayList<>();
 
+    private ArrayList<Materia> listaMaterias = new ArrayList<>();
+
     public ArrayList<Estudiante> getListaEstudiantes() {
         return listaEstudiantes;
     }
 
     public ArrayList<Profesor> getListaProfesores() {
         return listaProfesores;
+    }
+
+    public ArrayList<Materia> getListaMaterias() {
+        return listaMaterias;
     }
 
     public void agregarEstudiante(Estudiante nuevoEstudiante) throws EstudianteException {
@@ -87,6 +94,37 @@ public class Universidad {
         }
     }
 
+    public void agregarMateria(Materia nuevaMateria) throws MateriaException {
+        getListaMaterias().add(nuevaMateria);
+    }
+
+    public Boolean eliminarMateria(String codigo) throws MateriaException {
+        Materia materia = null;
+        boolean flagExiste = false;
+        materia = obtenerMateria(codigo);
+        if(materia == null)
+            throw new MateriaException("La materia a eliminar no existe");
+        else{
+            getListaMaterias().remove(materia);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public boolean actualizarMateria(String codigo, Materia materia) throws MateriaException {
+        Materia materiaActual = obtenerMateria(codigo);
+        if(materiaActual == null)
+            throw new MateriaException("La materia a actualizar no existe");
+        else{
+            materiaActual.setCodigo(materia.getCodigo());
+            materiaActual.setNombre(materia.getNombre());
+            materiaActual.setIntensidad(materia.getIntensidad());
+            materiaActual.setTipoMateria(materia.getTipoMateria());
+            return true;
+        }
+    }
+
+
     public Estudiante obtenerEstudiante(String codigo) {
         Estudiante estudianteEncontrado = null;
         for (Estudiante estudiante : getListaEstudiantes()) {
@@ -109,6 +147,17 @@ public class Universidad {
         return profesorEncontrado;
     }
 
+    public Materia obtenerMateria(String codigo) {
+        Materia materiaEncontrado = null;
+        for (Materia materia : getListaMaterias()) {
+            if(materia.getCodigo().equalsIgnoreCase(codigo)){
+                materiaEncontrado = materia;
+                break;
+            }
+        }
+        return materiaEncontrado;
+    }
+
     public boolean verificarEstudianteExistente(String codigo) throws EstudianteException {
         if(estudianteExiste(codigo)){
             throw new EstudianteException("El estudiante con código: "+codigo+" ya existe");
@@ -120,6 +169,14 @@ public class Universidad {
     public boolean verificarProfesorExistente(String codigo) throws ProfesorException {
         if(profesorExiste(codigo)){
             throw new ProfesorException("El profesor con código: "+codigo+" ya existe");
+        }else{
+            return false;
+        }
+    }
+
+    public boolean verificarMateriaExistente(String codigo) throws MateriaException {
+        if(materiaExiste(codigo)){
+            throw new MateriaException("La materia con código: "+codigo+" ya existe");
         }else{
             return false;
         }
@@ -145,6 +202,17 @@ public class Universidad {
             }
         }
         return profesorEncontrado;
+    }
+
+    public boolean materiaExiste(String codigo) {
+        boolean materiaEncontrado = false;
+        for (Materia materia : getListaMaterias()) {
+            if(materia.getCodigo().equalsIgnoreCase(codigo)){
+                materiaEncontrado = true;
+                break;
+            }
+        }
+        return materiaEncontrado;
     }
 
     public boolean comprobarAcceso(String usuario, String password){

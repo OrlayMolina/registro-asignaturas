@@ -2,53 +2,58 @@ package programacion3.parcial2.universidad.viewController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class AsignacionProfesoresViewController {
 
     @FXML
-    private TableColumn<?, ?> colApellidos;
+    private ComboBox<?> cmbMateria;
+
+    @FXML
+    private ComboBox<?> cmbProfesor;
 
     @FXML
     private TableColumn<?, ?> colCodigo;
 
     @FXML
-    private TableColumn<?, ?> colCorreo;
+    private TableColumn<?, ?> colCodigoMateria;
 
     @FXML
-    private TableColumn<?, ?> colEdad;
+    private TableColumn<?, ?> colCodigoProfesor;
 
     @FXML
-    private TableColumn<?, ?> colNombres;
+    private TableColumn<?, ?> colMateria;
 
     @FXML
-    private TableColumn<?, ?> colProfesion;
+    private TableColumn<?, ?> colProfesor;
 
     @FXML
-    private TableColumn<?, ?> colPrograma;
+    private TableView<?> tableAsignaciones;
 
     @FXML
-    private TableColumn<?, ?> colSexo;
+    private TextField txfCodigo;
 
     @FXML
-    private TableColumn<?, ?> colTelefono;
+    private TextField txfCodigoMateria;
 
     @FXML
-    private TableView<?> tableProfesores;
+    private TextField txfCodigoProfesor;
 
     @FXML
-    void actualizarProfesor(ActionEvent event) {
+    void actualizarAsignacion(ActionEvent event) {
 
     }
 
     @FXML
-    void agregarProfesor(ActionEvent event) {
+    void agregarAsignacion(ActionEvent event) {
 
     }
 
     @FXML
-    void buscarProfesor(ActionEvent event) {
+    void buscarAsignacion(ActionEvent event) {
 
     }
 
@@ -58,12 +63,7 @@ public class AsignacionProfesoresViewController {
     }
 
     @FXML
-    void eliminarProfesor(ActionEvent event) {
-
-    }
-
-    @FXML
-    void generarPDF(ActionEvent event) {
+    void eliminarAsignacion(ActionEvent event) {
 
     }
 

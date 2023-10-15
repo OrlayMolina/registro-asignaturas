@@ -6,14 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import programacion3.parcial2.universidad.controller.EstudianteController;
 import programacion3.parcial2.universidad.controller.ProfesorController;
 import programacion3.parcial2.universidad.enumm.Programa;
 import programacion3.parcial2.universidad.enumm.Sexo;
-import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.model.Universidad;
-import programacion3.parcial2.universidad.util.EstudianteUtil;
 import programacion3.parcial2.universidad.util.ProfesorUtil;
 
 import java.util.Optional;

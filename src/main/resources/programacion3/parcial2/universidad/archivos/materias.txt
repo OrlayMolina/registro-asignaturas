@@ -1,0 +1,4 @@
+001@@Ingeniería de Software II@@4 horas a la semana@@Teórica_Práctica
+002@@Infraestructura de Comunicaciones-Teoría@@6 horas a la semana@@Teórica
+003@@Bases de Datos I@@4 horas a la semana@@Teórica_Práctica
+004@@Teoría de Lenguajes Formales@@4 horas a la semana@@Teórica_Práctica
