@@ -24,6 +24,10 @@ public class EstudianteController {
         return modelFactoryController.eliminarEstudiante(codigo);
     }
 
+    public boolean actualizarEstudiante(String codigo, EstudianteDto estudianteDto) {
+        return modelFactoryController.actualizarEstudiante(codigo, estudianteDto);
+    }
+
     public List<EstudianteDto> obtenerEstudiantes() {
         return modelFactoryController.obtenerEstudiantes();
     }

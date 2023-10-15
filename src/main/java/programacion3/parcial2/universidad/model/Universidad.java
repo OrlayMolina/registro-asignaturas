@@ -30,6 +30,22 @@ public class Universidad {
         return flagExiste;
     }
 
+    public boolean actualizarEstudiante(String codigo, Estudiante estudiante) throws EstudianteException {
+        Estudiante estudianteActual = obtenerEstudiante(codigo);
+        if(estudianteActual == null)
+                throw new EstudianteException("El estudiante a actualizar no existe");
+        else{
+            estudianteActual.setCodigo(estudiante.getCodigo());
+            estudianteActual.setNombres(estudiante.getNombres());
+            estudianteActual.setApellidos(estudiante.getApellidos());
+            estudianteActual.setSexo(estudiante.getSexo());
+            estudianteActual.setEdad(estudiante.getEdad());
+            estudianteActual.setCorreo(estudiante.getCorreo());
+            estudianteActual.setTelefono(estudiante.getTelefono());
+            return true;
+        }
+    }
+
     public Estudiante obtenerEstudiante(String codigo) {
         Estudiante estudianteEncontrado = null;
         for (Estudiante estudiante : getListaEstudiantes()) {

@@ -1,5 +1,6 @@
 package programacion3.parcial2.universidad.controller;
 
+import programacion3.parcial2.universidad.exception.EstudianteException;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.mappers.UniversidadMapper;
 import programacion3.parcial2.universidad.model.Estudiante;
@@ -33,7 +34,7 @@ public class ModelFactoryController {
                 getUniversidad().agregarEstudiante(estudiante);
             }
             return true;
-        }catch (Exception e){
+        }catch (EstudianteException e){
             e.getMessage();
             return false;
         }
@@ -48,6 +49,17 @@ public class ModelFactoryController {
             e.printStackTrace();
         }
         return flagExiste;
+    }
+
+    public boolean actualizarEstudiante(String codigoActual, EstudianteDto estudianteDto) {
+        try {
+            Estudiante estudiante = mapper.estudianteDtoToEstudiante(estudianteDto);
+            getUniversidad().actualizarEstudiante(codigoActual, estudiante);
+            return true;
+        } catch (EstudianteException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public List<EstudianteDto> obtenerEstudiantes() {

@@ -10,8 +10,10 @@ import programacion3.parcial2.universidad.controller.EstudianteController;
 import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.model.Universidad;
+import programacion3.parcial2.universidad.util.EstudianteUtil;
 
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class EstudiantesViewController {
 
@@ -69,7 +71,7 @@ public class EstudiantesViewController {
 
     @FXML
     void actualizarEstudiante(ActionEvent event) {
-
+        actualizarEstudiante();
     }
 
     @FXML
@@ -79,12 +81,20 @@ public class EstudiantesViewController {
 
     @FXML
     void buscarEstudiante(ActionEvent event) {
+        String codigo = txfCodigo.getText();
+        String nombres = txfNombres.getText();
+        String apellidos = txfApellidos.getText();
+        String sexo = cmbSexo.getValue();
+        String edad = txfEdad.getText();
+        String correo = txfCorreo.getText();
+        String telefono = txfTelefono.getText();
 
+        buscarEstudiantes(codigo, nombres, apellidos, sexo, edad, correo, telefono);
     }
 
     @FXML
     void cancelarFiltro(ActionEvent event) {
-
+        cancelarBusqueda();
     }
 
     @FXML
@@ -159,22 +169,64 @@ public class EstudiantesViewController {
     private void eliminarEstudiante() {
         boolean estudianteEliminado = false;
         if(estudianteSeleccionado != null){
-            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar al estudiante?")){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de eliminar al estudiante?")){
                 estudianteEliminado = estudianteControllerService.eliminarEstudiante(estudianteSeleccionado.codigo());
                 if(estudianteEliminado){
                     listaEstudiantes.remove(estudianteSeleccionado);
                     estudianteSeleccionado = null;
                     tableEstudiantes.getSelectionModel().clearSelection();
                     limpiarCamposEstudiante();
-                    registrarAcciones("Estudiante eliminado",1, "Eliminar estudiante");
-                    mostrarMensaje("Notificación estudiante", "Estudiante eliminado", "El estudiante se ha eliminado con éxito", Alert.AlertType.INFORMATION);
+                    registrarAcciones("Estudiante eliminado",1, "Estudiante eliminado, acción realizada por " + universidad.nombreProperties());
+                    mostrarMensaje("Notificación estudiante", "Estudiante eliminado", "El estudiante se ha eliminado con éxito.", Alert.AlertType.INFORMATION);
                 }else{
                     mostrarMensaje("Notificación estudiante", "Estudiante no eliminado", "El estudiante no se puede eliminar", Alert.AlertType.ERROR);
                 }
             }
         }else{
-            mostrarMensaje("Notificación producto", "Producto no seleccionado", "Seleccionado un empleado de la lista", Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación estudiante", "Estudiante no seleccionado", "Seleccionado un estudiante de la lista", Alert.AlertType.WARNING);
         }
+    }
+
+    private void actualizarEstudiante() {
+        boolean estudianteActualizado = false;
+
+        String codigo = estudianteSeleccionado.codigo();
+        EstudianteDto estudianteDto = construirEstudianteDto();
+
+        if(estudianteSeleccionado != null){
+
+            if(datosValidos(estudianteSeleccionado)){
+                estudianteActualizado = estudianteControllerService.actualizarEstudiante(codigo, estudianteDto);
+                if(estudianteActualizado){
+                    listaEstudiantes.remove(estudianteSeleccionado);
+                    listaEstudiantes.add(estudianteDto);
+                    tableEstudiantes.refresh();
+                    mostrarMensaje("Notificación estudiante", "Estudiante actualizado", "El estudiante se ha actualizado con éxito.", Alert.AlertType.INFORMATION);
+                    limpiarCamposEstudiante();
+                    registrarAcciones("Estudiante actualizado",1, "Estudiante actualizado, acción realizada por " + universidad.nombreProperties());
+                }else{
+                    mostrarMensaje("Notificación estudiante", "Estudiante no actualizado", "El estudiante no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    registrarAcciones("Producto no actualizado",1, "Actualizar estudiante");
+                }
+            }else{
+                mostrarMensaje("Notificación estudiante", "Estudiante no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            }
+
+        }
+    }
+
+    private void buscarEstudiantes(String codigo, String nombres, String apellidos, String sexo, String edad, String correo, String telefono) {
+
+        Predicate<EstudianteDto> predicado = EstudianteUtil.buscarPorTodo(codigo, nombres, apellidos, sexo, edad, correo, telefono);
+        ObservableList<EstudianteDto> estudiantesFiltrados = listaEstudiantes.filtered(predicado);
+        tableEstudiantes.setItems(estudiantesFiltrados);
+    }
+
+    private void cancelarBusqueda(){
+        limpiarCamposEstudiante();
+        tableEstudiantes.getSelectionModel().clearSelection();
+        tableEstudiantes.setItems(listaEstudiantes);
+        listenerSelection();
     }
 
     private void obtenerEstudiantes() {
