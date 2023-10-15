@@ -20,6 +20,10 @@ public class EstudianteController {
         return modelFactoryController.agregarEstudiante(estudianteDto);
     }
 
+    public boolean eliminarEstudiante(String codigo) {
+        return modelFactoryController.eliminarEstudiante(codigo);
+    }
+
     public List<EstudianteDto> obtenerEstudiantes() {
         return modelFactoryController.obtenerEstudiantes();
     }

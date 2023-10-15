@@ -11,6 +11,8 @@ import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.model.Universidad;
 
+import java.util.Optional;
+
 public class EstudiantesViewController {
 
     EstudianteController estudianteControllerService;
@@ -87,7 +89,7 @@ public class EstudiantesViewController {
 
     @FXML
     void eliminarEstudiante(ActionEvent event) {
-
+        eliminarEstudiante();
     }
 
     @FXML
@@ -152,6 +154,27 @@ public class EstudiantesViewController {
             mostrarMensaje("Notificación estudiante", "Estudiante no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
         }
 
+    }
+
+    private void eliminarEstudiante() {
+        boolean estudianteEliminado = false;
+        if(estudianteSeleccionado != null){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar al estudiante?")){
+                estudianteEliminado = estudianteControllerService.eliminarEstudiante(estudianteSeleccionado.codigo());
+                if(estudianteEliminado){
+                    listaEstudiantes.remove(estudianteSeleccionado);
+                    estudianteSeleccionado = null;
+                    tableEstudiantes.getSelectionModel().clearSelection();
+                    limpiarCamposEstudiante();
+                    registrarAcciones("Estudiante eliminado",1, "Eliminar estudiante");
+                    mostrarMensaje("Notificación estudiante", "Estudiante eliminado", "El estudiante se ha eliminado con éxito", Alert.AlertType.INFORMATION);
+                }else{
+                    mostrarMensaje("Notificación estudiante", "Estudiante no eliminado", "El estudiante no se puede eliminar", Alert.AlertType.ERROR);
+                }
+            }
+        }else{
+            mostrarMensaje("Notificación producto", "Producto no seleccionado", "Seleccionado un empleado de la lista", Alert.AlertType.WARNING);
+        }
     }
 
     private void obtenerEstudiantes() {
@@ -219,6 +242,19 @@ public class EstudiantesViewController {
             return true;
         }else{
             mostrarMensaje("Notificación estudiante", "Estudiante no creado", mensaje, Alert.AlertType.ERROR);
+            return false;
+        }
+    }
+
+    private boolean mostrarMensajeConfirmacion(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Confirmación");
+        alert.setContentText(mensaje);
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            return true;
+        } else {
             return false;
         }
     }

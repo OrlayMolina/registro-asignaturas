@@ -1,5 +1,7 @@
 package programacion3.parcial2.universidad.model;
 
+import programacion3.parcial2.universidad.exception.EstudianteException;
+
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -11,13 +13,37 @@ public class Universidad {
         return listaEstudiantes;
     }
 
-    public void agregarEstudiante(Estudiante nuevoEstudiante) throws Exception{
+    public void agregarEstudiante(Estudiante nuevoEstudiante) throws EstudianteException {
         getListaEstudiantes().add(nuevoEstudiante);
     }
 
-    public boolean verificarEstudianteExistente(String codigo) throws Exception {
+    public Boolean eliminarEstudiante(String codigo) throws EstudianteException {
+        Estudiante estudiante = null;
+        boolean flagExiste = false;
+        estudiante = obtenerEstudiante(codigo);
+        if(estudiante == null)
+            throw new EstudianteException("El estudiante a eliminar no existe");
+        else{
+            getListaEstudiantes().remove(estudiante);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public Estudiante obtenerEstudiante(String codigo) {
+        Estudiante estudianteEncontrado = null;
+        for (Estudiante estudiante : getListaEstudiantes()) {
+            if(estudiante.getCodigo().equalsIgnoreCase(codigo)){
+                estudianteEncontrado = estudiante;
+                break;
+            }
+        }
+        return estudianteEncontrado;
+    }
+
+    public boolean verificarEstudianteExistente(String codigo) throws EstudianteException {
         if(estudianteExiste(codigo)){
-            throw new Exception("El estudiante con código: "+codigo+" ya existe");
+            throw new EstudianteException("El estudiante con código: "+codigo+" ya existe");
         }else{
             return false;
         }

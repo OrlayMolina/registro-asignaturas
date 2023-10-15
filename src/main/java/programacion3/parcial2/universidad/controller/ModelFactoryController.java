@@ -39,6 +39,17 @@ public class ModelFactoryController {
         }
     }
 
+    public boolean eliminarEstudiante(String codigo) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getUniversidad().eliminarEstudiante(codigo);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
     public List<EstudianteDto> obtenerEstudiantes() {
         return  mapper.getEstudianteDto(universidad.getListaEstudiantes());
     }

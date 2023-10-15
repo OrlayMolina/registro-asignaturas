@@ -23,5 +23,7 @@ module programacion3.parcial2.universidad {
     exports programacion3.parcial2.universidad.mailer;
     opens programacion3.parcial2.universidad.enumm to javafx.fxml;
     exports programacion3.parcial2.universidad.enumm;
+    opens programacion3.parcial2.universidad.exception to javafx.fxml;
+    exports programacion3.parcial2.universidad.exception;
 
 }
