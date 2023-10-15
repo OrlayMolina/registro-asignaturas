@@ -4,6 +4,7 @@ import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.mappers.UniversidadMapper;
 import programacion3.parcial2.universidad.model.Estudiante;
 import programacion3.parcial2.universidad.model.Universidad;
+import programacion3.parcial2.universidad.util.Persistencia;
 
 import java.util.List;
 
@@ -40,5 +41,9 @@ public class ModelFactoryController {
 
     public List<EstudianteDto> obtenerEstudiantes() {
         return  mapper.getEstudianteDto(universidad.getListaEstudiantes());
+    }
+
+    public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
+        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
 }

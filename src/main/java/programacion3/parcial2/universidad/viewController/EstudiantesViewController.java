@@ -9,10 +9,13 @@ import javafx.scene.control.*;
 import programacion3.parcial2.universidad.controller.EstudianteController;
 import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
+import programacion3.parcial2.universidad.model.Universidad;
 
 public class EstudiantesViewController {
 
     EstudianteController estudianteControllerService;
+
+    Universidad universidad;
     ObservableList<EstudianteDto> listaEstudiantes = FXCollections.observableArrayList();
     ObservableList<String> listaGenero = FXCollections.observableArrayList();
     EstudianteDto estudianteSeleccionado;
@@ -95,6 +98,7 @@ public class EstudiantesViewController {
     @FXML
     void initialize() {
         estudianteControllerService = new EstudianteController();
+        universidad = new Universidad();
         initView();
     }
 
@@ -138,6 +142,7 @@ public class EstudiantesViewController {
             if(estudianteControllerService.agregarEstudiante(estudianteDto)){
                 listaEstudiantes.add(estudianteDto);
                 mostrarMensaje("Notificación estudiante", "Estudiante creado", "El estudiante se ha creado con éxito", Alert.AlertType.INFORMATION);
+                registrarAcciones("Estudiante creado",1, "Creación de un estudiante, acción realizada por " + universidad.nombreProperties());
                 limpiarCamposEstudiante();
 
             }else{
@@ -188,6 +193,10 @@ public class EstudiantesViewController {
         txfCorreo.setText("");
         txfTelefono.setText("");
 
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+        estudianteControllerService.registrarAcciones(mensaje, nivel, accion);
     }
 
     private boolean datosValidos(EstudianteDto estudianteDto) {

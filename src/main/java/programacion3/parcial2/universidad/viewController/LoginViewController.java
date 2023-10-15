@@ -50,11 +50,16 @@ public class LoginViewController {
         String usuario = txfNombreUsuario.getText();
         String contrasenia = pwfContrasenia.getText();
         if(modelFactoryController.comprobarAcceso(usuario, contrasenia)){
+            registrarAcciones("Inicio de Sesión",1, "Se ha Iniciado la Sesion del usuario: "+universidad.nombreProperties()+"con el perfil de "+universidad.usuarioProperties());
             cerrarVentana(btnIniciarSesion);
             main.cargarVentanaTabulador();
         }else{
             mostrarMensaje("Notificación de Acceso", "Inicio de Sesión", "El inicio de sesion es incorrecto", Alert.AlertType.ERROR);
         }
+    }
+
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
     }
 
     void enviarCorreo() throws UnsupportedEncodingException {

@@ -12,6 +12,10 @@ public class EstudianteController {
         modelFactoryController = ModelFactoryController.getInstance();
     }
 
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    }
+
     public boolean agregarEstudiante(EstudianteDto estudianteDto) {
         return modelFactoryController.agregarEstudiante(estudianteDto);
     }
