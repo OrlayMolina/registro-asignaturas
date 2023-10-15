@@ -1,7 +1,9 @@
 package programacion3.parcial2.universidad.util;
 
+import programacion3.parcial2.universidad.enumm.Programa;
 import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.model.Estudiante;
+import programacion3.parcial2.universidad.model.Profesor;
 import programacion3.parcial2.universidad.model.Universidad;
 
 import java.io.FileNotFoundException;
@@ -12,6 +14,8 @@ public class Persistencia {
 
     public static final String RUTA_ARCHIVO_LOG = "src/main/resources/programacion3/parcial2/universidad/archivos/UniversidadLog.txt";
     public static final String RUTA_ARCHIVO_ESTUDIANTES = "src/main/resources/programacion3/parcial2/universidad/archivos/estudiantes.txt";
+
+    public static final String RUTA_ARCHIVO_PROFESORES = "src/main/resources/programacion3/parcial2/universidad/archivos/profesores.txt";
 
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
@@ -25,6 +29,16 @@ public class Persistencia {
                     + ";" + estudiante.getEdad() + ";" + estudiante.getCorreo() + ";" + estudiante.getTelefono() + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ESTUDIANTES, contenido, false);
+    }
+
+    public static void guardarProfesor(ArrayList<Profesor> listaProfesores) throws IOException {
+        // TODO Auto-generated method stub
+        String contenido = "";
+        for (Profesor profesor : listaProfesores) {
+            contenido += profesor.getCodigo() + ";" + profesor.getNombres() + ";" + profesor.getApellidos() + ";" + profesor.getSexo()
+                    + ";" + profesor.getEdad() + ";" + profesor.getCorreo() + ";" + profesor.getTelefono() + ";" + profesor.getPrograma() + ";" + profesor.getProfesion() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PROFESORES, contenido, false);
     }
 
     public static void cargarDatosArchivos(Universidad universidad) throws FileNotFoundException, IOException {
@@ -52,5 +66,34 @@ public class Persistencia {
             estudiantes.add(estudiante);
         }
         return estudiantes;
+    }
+
+    public static void cargarDatosProfesores(Universidad universidad) throws FileNotFoundException, IOException {
+
+        ArrayList<Profesor> profesoresCargados = cargarProfesor();
+        if (profesoresCargados.size() > 0)
+            universidad.getListaProfesores().addAll(profesoresCargados);
+
+    }
+
+    public static ArrayList<Profesor> cargarProfesor() throws FileNotFoundException, IOException {
+        ArrayList<Profesor> profesores = new ArrayList<Profesor>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PROFESORES);
+        String linea = "";
+        for (int i = 0; i < contenido.size(); i++) {
+            linea = contenido.get(i);//juan@@arias@@125454@@Armenia@@uni1@@@12454@@125444
+            Profesor profesor = new Profesor();
+            profesor.setCodigo(linea.split(";")[0]);
+            profesor.setNombres(linea.split(";")[1]);
+            profesor.setApellidos(linea.split(";")[2]);
+            profesor.setSexo(Sexo.valueOf(linea.split(";")[3]));
+            profesor.setEdad(Integer.valueOf(linea.split(";")[4]));
+            profesor.setCorreo(linea.split(";")[5]);
+            profesor.setTelefono(linea.split(";")[6]);
+            profesor.setPrograma(Programa.valueOf(linea.split(";")[7]));
+            profesor.setProfesion(linea.split(";")[8]);
+            profesores.add(profesor);
+        }
+        return profesores;
     }
 }

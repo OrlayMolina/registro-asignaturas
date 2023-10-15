@@ -1,10 +1,12 @@
 package programacion3.parcial2.universidad.controller;
 
 import programacion3.parcial2.universidad.exception.EstudianteException;
+import programacion3.parcial2.universidad.exception.ProfesorException;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.mapping.mappers.UniversidadMapper;
 import programacion3.parcial2.universidad.model.Estudiante;
+import programacion3.parcial2.universidad.model.Profesor;
 import programacion3.parcial2.universidad.model.Universidad;
 import programacion3.parcial2.universidad.util.Persistencia;
 
@@ -33,6 +35,7 @@ public class ModelFactoryController {
         universidad = new Universidad();
         try {
             Persistencia.cargarDatosArchivos(universidad);
+            Persistencia.cargarDatosProfesores(universidad);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,6 +50,10 @@ public class ModelFactoryController {
 
     public ArrayList<Estudiante> getListaEstudiantes() {
         return getUniversidad().getListaEstudiantes();
+    }
+
+    public ArrayList<Profesor> getListaProfesores() {
+        return getUniversidad().getListaProfesores();
     }
 
     public boolean agregarEstudiante(EstudianteDto estudianteDto) {
@@ -70,7 +77,7 @@ public class ModelFactoryController {
         try {
             flagExiste = getUniversidad().eliminarEstudiante(codigo);
             Persistencia.guardarEstudiante(getListaEstudiantes());
-        } catch (Exception e) {
+        } catch (EstudianteException | IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -84,6 +91,50 @@ public class ModelFactoryController {
             Persistencia.guardarEstudiante(getListaEstudiantes());
             return true;
         } catch (EstudianteException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean agregarProfesor(ProfesorDto profesorDto) {
+        try{
+            if(!universidad.verificarProfesorExistente(profesorDto.codigo())) {
+                Profesor profesor = mapper.profesorDtoToProfesor(profesorDto);
+                getUniversidad().agregarProfesor(profesor);
+                Persistencia.guardarProfesor(getListaProfesores());
+            }
+            return true;
+        }catch (ProfesorException e){
+            e.getMessage();
+            return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean eliminarProfesor(String codigo) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getUniversidad().eliminarProfesor(codigo);
+            Persistencia.guardarProfesor(getListaProfesores());
+        } catch (ProfesorException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return flagExiste;
+    }
+
+    public boolean actualizarProfesor(String codigoActual, ProfesorDto profesorDto) {
+        try {
+            Profesor profesor = mapper.profesorDtoToProfesor(profesorDto);
+            getUniversidad().actualizarProfesor(codigoActual, profesor);
+            Persistencia.guardarProfesor(getListaProfesores());
+            return true;
+        } catch (ProfesorException e) {
             e.printStackTrace();
             return false;
         } catch (IOException e) {

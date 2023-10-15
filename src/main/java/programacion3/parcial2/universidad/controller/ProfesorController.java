@@ -17,6 +17,18 @@ public class ProfesorController {
         modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
     }
 
+    public boolean agregarProfesor(ProfesorDto profesorDto) {
+        return modelFactoryController.agregarProfesor(profesorDto);
+    }
+
+    public boolean eliminarProfesor(String codigo) {
+        return modelFactoryController.eliminarProfesor(codigo);
+    }
+
+    public boolean actualizarProfesor(String codigo, ProfesorDto profesorDto) {
+        return modelFactoryController.actualizarProfesor(codigo, profesorDto);
+    }
+
     public List<ProfesorDto> obtenerProfesores() {
         return modelFactoryController.obtenerProfesores();
     }

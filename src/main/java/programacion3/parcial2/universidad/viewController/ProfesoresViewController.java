@@ -13,8 +13,11 @@ import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.model.Universidad;
+import programacion3.parcial2.universidad.util.EstudianteUtil;
+import programacion3.parcial2.universidad.util.ProfesorUtil;
 
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class ProfesoresViewController {
 
@@ -84,27 +87,37 @@ public class ProfesoresViewController {
 
     @FXML
     void actualizarProfesor(ActionEvent event) {
-
+        actualizarProfesor();
     }
 
     @FXML
     void agregarProfesor(ActionEvent event) {
-
+        crearProfesor();
     }
 
     @FXML
     void buscarProfesor(ActionEvent event) {
+        String codigo = txfCodigo.getText();
+        String nombres = txfNombres.getText();
+        String apellidos = txfApellidos.getText();
+        String sexo = cmbSexo.getValue();
+        String edad = txfEdad.getText();
+        String correo = txfCorreo.getText();
+        String telefono = txfTelefono.getText();
+        String programa = cmbPrograma.getValue();
+        String profesion = txfProfesion.getText();
 
+        buscarProfesores(codigo, nombres, apellidos, sexo, edad, correo, telefono, programa, profesion);
     }
 
     @FXML
     void cancelarFiltro(ActionEvent event) {
-
+        cancelarBusqueda();
     }
 
     @FXML
     void eliminarProfesor(ActionEvent event) {
-
+        eliminarProfesor();
     }
 
     @FXML
@@ -160,6 +173,89 @@ public class ProfesoresViewController {
         cmbSexo.setItems(listaPrograma);
     }
 
+    private void crearProfesor() {
+
+        ProfesorDto profesorDto = construirProfesorDto();
+
+        if(datosValidos(profesorDto)){
+            if(profesorControllerService.agregarProfesor(profesorDto)){
+                listaProfesoresDto.add(profesorDto);
+                mostrarMensaje("Notificación profesor", "Profesor creado", "El profesor se ha creado con éxito", Alert.AlertType.INFORMATION);
+                registrarAcciones("Profesor creado",1, "Creación de un profesor, acción realizada por " + universidad.nombreProperties());
+                limpiarCamposProfesor();
+
+            }else{
+                mostrarMensaje("Notificación profesor", "Profesor no creado", "El profesor no se ha creado", Alert.AlertType.ERROR);
+            }
+        }else{
+            mostrarMensaje("Notificación profesor", "Profesor no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+        }
+
+    }
+
+    private void eliminarProfesor() {
+        boolean profesorEliminado = false;
+        if(profesorSeleccionado != null){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de eliminar al profesor?")){
+                profesorEliminado = profesorControllerService.eliminarProfesor(profesorSeleccionado.codigo());
+                if(profesorEliminado){
+                    listaProfesoresDto.remove(profesorSeleccionado);
+                    profesorSeleccionado = null;
+                    tableProfesores.getSelectionModel().clearSelection();
+                    limpiarCamposProfesor();
+                    registrarAcciones("Profesor eliminado",1, "Profesor eliminado, acción realizada por " + universidad.nombreProperties());
+                    mostrarMensaje("Notificación profesor", "Profesor eliminado", "El profesor se ha eliminado con éxito.", Alert.AlertType.INFORMATION);
+                }else{
+                    mostrarMensaje("Notificación profesor", "Profesor no eliminado", "El profesor no se puede eliminar", Alert.AlertType.ERROR);
+                }
+            }
+        }else{
+            mostrarMensaje("Notificación profesor", "Profesor no seleccionado", "Seleccionado un profesor de la lista", Alert.AlertType.WARNING);
+        }
+    }
+
+    private void actualizarProfesor() {
+        boolean profesorActualizado = false;
+
+        String codigo = profesorSeleccionado.codigo();
+        ProfesorDto profesorDto = construirProfesorDto();
+
+        if(profesorSeleccionado != null){
+
+            if(datosValidos(profesorSeleccionado)){
+                profesorActualizado = profesorControllerService.actualizarProfesor(codigo, profesorDto);
+                if(profesorActualizado){
+                    listaProfesoresDto.remove(profesorSeleccionado);
+                    listaProfesoresDto.add(profesorDto);
+                    tableProfesores.refresh();
+                    mostrarMensaje("Notificación profesor", "Profesor actualizado", "El profesor se ha actualizado con éxito.", Alert.AlertType.INFORMATION);
+                    limpiarCamposProfesor();
+                    registrarAcciones("Profesor actualizado",1, "Profesor actualizado, acción realizada por " + universidad.nombreProperties());
+                }else{
+                    mostrarMensaje("Notificación profesor", "Profesor no actualizado", "El profesor no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    registrarAcciones("Profesor no actualizado",1, "Actualizar profesor");
+                }
+            }else{
+                mostrarMensaje("Notificación profesor", "Profesor no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            }
+
+        }
+    }
+
+
+    private void buscarProfesores(String codigo, String nombres, String apellidos, String sexo, String edad, String correo, String telefono, String programa, String profesion) {
+
+        Predicate<ProfesorDto> predicado = ProfesorUtil.buscarPorTodo(codigo, nombres, apellidos, sexo, edad, correo, telefono, programa, profesion);
+        ObservableList<ProfesorDto> profesoresFiltrados = listaProfesoresDto.filtered(predicado);
+        tableProfesores.setItems(profesoresFiltrados);
+    }
+
+    private void cancelarBusqueda(){
+        limpiarCamposProfesor();
+        tableProfesores.getSelectionModel().clearSelection();
+        tableProfesores.setItems(listaProfesoresDto);
+        listenerSelection();
+    }
 
     private void obtenerEstudiantes() {
         listaProfesoresDto.addAll(profesorControllerService.obtenerProfesores());
@@ -195,7 +291,7 @@ public class ProfesoresViewController {
         );
     }
 
-    private void limpiarCamposEstudiante() {
+    private void limpiarCamposProfesor() {
         txfCodigo.setText("");
         txfNombres.setText("");
         txfApellidos.setText("");
