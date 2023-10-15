@@ -8,3 +8,39 @@ oct. 14, 2023 11:06:32 P. M. programacion3.parcial2.universidad.util.ArchivoUti
 INFORMACIÓN: Actualizar estudiante,Estudiante actualizado,2023-10-14
 oct. 14, 2023 11:06:46 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Eliminar estudiante,Estudiante eliminado,2023-10-14
+oct. 14, 2023 11:39:50 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlaycon el perfil de administrador,Inicio de Sesión,2023-10-14
+oct. 14, 2023 11:40:39 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un estudiante, acción realizada por Orlay,Estudiante creado,2023-10-14
+oct. 14, 2023 11:41:49 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un estudiante, acción realizada por Orlay,Estudiante creado,2023-10-14
+oct. 14, 2023 11:42:36 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un estudiante, acción realizada por Orlay,Estudiante creado,2023-10-14
+oct. 14, 2023 11:48:16 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlaycon el perfil de administrador,Inicio de Sesión,2023-10-14
+oct. 14, 2023 11:49:07 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Estudiante actualizado, acción realizada por Orlay,Estudiante actualizado,2023-10-14
+oct. 14, 2023 11:49:41 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Estudiante actualizado, acción realizada por Orlay,Estudiante actualizado,2023-10-14
+oct. 14, 2023 11:53:46 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-14
+oct. 14, 2023 11:53:59 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Estudiante actualizado, acción realizada por Orlay,Estudiante actualizado,2023-10-14
+oct. 14, 2023 11:55:24 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Estudiante actualizado, acción realizada por Orlay,Estudiante actualizado,2023-10-14
+oct. 14, 2023 11:55:31 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Estudiante eliminado, acción realizada por Orlay,Estudiante eliminado,2023-10-14
+oct. 14, 2023 11:58:36 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-14
+oct. 15, 2023 12:00:13 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 12:01:12 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 12:03:25 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 12:11:46 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 12:14:19 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 12:17:41 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15

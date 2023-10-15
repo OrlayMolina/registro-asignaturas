@@ -50,7 +50,7 @@ public class LoginViewController {
         String usuario = txfNombreUsuario.getText();
         String contrasenia = pwfContrasenia.getText();
         if(modelFactoryController.comprobarAcceso(usuario, contrasenia)){
-            registrarAcciones("Inicio de Sesión",1, "Se ha Iniciado la Sesion del usuario: "+universidad.nombreProperties()+"con el perfil de "+universidad.usuarioProperties());
+            registrarAcciones("Inicio de Sesión",1, "Se ha Iniciado la Sesion del usuario: "+universidad.nombreProperties()+" con el perfil de "+universidad.usuarioProperties());
             cerrarVentana(btnIniciarSesion);
             main.cargarVentanaTabulador();
         }else{

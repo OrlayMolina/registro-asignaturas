@@ -206,7 +206,7 @@ public class EstudiantesViewController {
                     registrarAcciones("Estudiante actualizado",1, "Estudiante actualizado, acción realizada por " + universidad.nombreProperties());
                 }else{
                     mostrarMensaje("Notificación estudiante", "Estudiante no actualizado", "El estudiante no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
-                    registrarAcciones("Producto no actualizado",1, "Actualizar estudiante");
+                    registrarAcciones("Estudiante no actualizado",1, "Actualizar estudiante");
                 }
             }else{
                 mostrarMensaje("Notificación estudiante", "Estudiante no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);

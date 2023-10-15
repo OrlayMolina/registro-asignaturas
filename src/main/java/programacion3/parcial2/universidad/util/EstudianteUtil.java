@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 public class EstudianteUtil {
 
     public static Predicate<EstudianteDto> buscarPorCodigo(String codigo){
-        return estudianteDto -> estudianteDto.codigo().equals(codigo);
+        return estudianteDto -> estudianteDto.codigo().contains(codigo);
     }
 
     public static Predicate<EstudianteDto> buscarPorNombres(String nombres){
