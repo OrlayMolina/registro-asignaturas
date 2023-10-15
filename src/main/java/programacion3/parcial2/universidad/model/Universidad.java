@@ -8,9 +8,14 @@ import java.util.ResourceBundle;
 public class Universidad {
 
     private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+    private ArrayList<Profesor> listaProfesores = new ArrayList<>();
 
     public ArrayList<Estudiante> getListaEstudiantes() {
         return listaEstudiantes;
+    }
+
+    public ArrayList<Profesor> getListaProfesores() {
+        return listaProfesores;
     }
 
     public void agregarEstudiante(Estudiante nuevoEstudiante) throws EstudianteException {

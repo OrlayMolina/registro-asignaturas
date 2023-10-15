@@ -2,6 +2,7 @@ package programacion3.parcial2.universidad.controller;
 
 import programacion3.parcial2.universidad.exception.EstudianteException;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
+import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.mapping.mappers.UniversidadMapper;
 import programacion3.parcial2.universidad.model.Estudiante;
 import programacion3.parcial2.universidad.model.Universidad;
@@ -92,6 +93,10 @@ public class ModelFactoryController {
 
     public List<EstudianteDto> obtenerEstudiantes() {
         return  mapper.getEstudianteDto(universidad.getListaEstudiantes());
+    }
+
+    public List<ProfesorDto> obtenerProfesores() {
+        return  mapper.getProfesorDto(universidad.getListaProfesores());
     }
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
