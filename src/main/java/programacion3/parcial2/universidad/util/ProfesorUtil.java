@@ -35,11 +35,11 @@ public class ProfesorUtil {
     }
 
     public static Predicate<ProfesorDto> buscarPorPrograma(String programa){
-        return profesorDto -> profesorDto.correo().contains(programa);
+        return profesorDto -> profesorDto.programa().contains(programa);
     }
 
     public static Predicate<ProfesorDto> buscarPorProfesion(String profesion){
-        return profesorDto -> profesorDto.telefono().contains(profesion);
+        return profesorDto -> profesorDto.profesion().contains(profesion);
     }
 
     public static Predicate<ProfesorDto> buscarPorTodo(String codigo, String nombres, String apellidos, String sexo,

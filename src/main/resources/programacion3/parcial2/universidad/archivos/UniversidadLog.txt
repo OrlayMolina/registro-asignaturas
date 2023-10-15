@@ -52,3 +52,27 @@ oct. 15, 2023 6:58:01 A. M. programacion3.parcial2.universidad.util.ArchivoUtil
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
 oct. 15, 2023 7:00:30 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:21:53 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:26:27 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:28:51 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:32:34 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:33:55 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un profesor, acción realizada por Orlay,Profesor creado,2023-10-15
+oct. 15, 2023 8:36:34 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un profesor, acción realizada por Orlay,Profesor creado,2023-10-15
+oct. 15, 2023 8:40:58 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:41:14 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Profesor actualizado, acción realizada por Orlay,Profesor actualizado,2023-10-15
+oct. 15, 2023 8:41:43 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un profesor, acción realizada por Orlay,Profesor creado,2023-10-15
+oct. 15, 2023 8:42:02 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Profesor eliminado, acción realizada por Orlay,Profesor eliminado,2023-10-15
+oct. 15, 2023 8:44:36 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-15
+oct. 15, 2023 8:47:42 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un profesor, acción realizada por Orlay,Profesor creado,2023-10-15

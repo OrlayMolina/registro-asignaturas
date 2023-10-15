@@ -1,0 +1,3 @@
+48562369;Gloria Yaneth;Giraldo;Femenino;43;gyanethg@uniquindio.edu.co;3102569874;Contaduría_Pública;Contadora Pública
+51236594;Carlos Alberto;Montes Salázar;Masculino;58;camontess@uniquindio.edu.co;Contador Público;Contaduría_Pública;Contador Público
+7845123;Diana Lucía;Villamil;Femenino;39;dlvillamil@uniquindio.edu.co;3145698752;Ingenieria_de_Sistemas_y_Computación;Topografa

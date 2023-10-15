@@ -169,8 +169,18 @@ public class ProfesoresViewController {
 
     public void mostrarPrograma(){
         listaPrograma.add(String.valueOf(Programa.Artes_Visuales));
+        listaPrograma.add(String.valueOf(Programa.Ciencia_de_la_Información_y_la_Documentación_Bibliotecología_y_Archivística));
+        listaPrograma.add(String.valueOf(Programa.Contaduría_Pública));
+        listaPrograma.add(String.valueOf(Programa.Curso_Especializado_en_Inglés_para_niños));
+        listaPrograma.add(String.valueOf(Programa.Curso_Especializado_en_Música));
         listaPrograma.add(String.valueOf(Programa.Ingeniería_Civil));
-        cmbSexo.setItems(listaPrograma);
+        listaPrograma.add(String.valueOf(Programa.Ingeniería_Topográfica_y_Geomática));
+        listaPrograma.add(String.valueOf(Programa.Ingeniería_Electrónica));
+        listaPrograma.add(String.valueOf(Programa.Ingenieria_de_Sistemas_y_Computación));
+        listaPrograma.add(String.valueOf(Programa.Medicina));
+        listaPrograma.add(String.valueOf(Programa.Economía));
+        listaPrograma.add(String.valueOf(Programa.Enfermería));
+        cmbPrograma.setItems(listaPrograma);
     }
 
     private void crearProfesor() {
@@ -270,8 +280,8 @@ public class ProfesoresViewController {
             txfEdad.setText(profesorSeleccionado.edad());
             txfCorreo.setText(profesorSeleccionado.correo());
             txfTelefono.setText(profesorSeleccionado.telefono());
-            cmbPrograma.setValue(profesorSeleccionado.correo());
-            txfProfesion.setText(profesorSeleccionado.telefono());
+            cmbPrograma.setValue(profesorSeleccionado.programa());
+            txfProfesion.setText(profesorSeleccionado.profesion());
 
         }
     }
