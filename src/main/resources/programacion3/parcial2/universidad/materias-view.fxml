@@ -13,7 +13,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="359.0" prefWidth="587.0" stylesheets="@tema.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programacion3.parcial2.universidad.viewController.MateriasViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="48.0" layoutX="4.0" layoutY="84.0" stroke="#949393" strokeType="INSIDE" width="577.0" />
@@ -44,7 +43,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label text="Intesidad horaria:" GridPane.columnIndex="4">
+            <Label text="Intensidad horaria:" GridPane.columnIndex="4">
                <font>
                   <Font size="13.0" />
                </font>

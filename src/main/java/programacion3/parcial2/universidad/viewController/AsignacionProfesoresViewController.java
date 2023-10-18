@@ -85,6 +85,16 @@ public class AsignacionProfesoresViewController {
 
     }
 
+    @FXML
+    void llenarCodigoMateria(ActionEvent event) {
+        txfCodigoMateria.setText(cmbMateria.getSelectionModel().getSelectedItem().codigo());
+    }
+
+    @FXML
+    void llenarCodigoProfesor(ActionEvent event) {
+        txfCodigoProfesor.setText(cmbProfesor.getSelectionModel().getSelectedItem().codigo());
+    }
+
 
     @FXML
     void initialize() {
