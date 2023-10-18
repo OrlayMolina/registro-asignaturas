@@ -1,4 +1,4 @@
-package programacion3.parcial2.universidad.util;
+package programacion3.parcial2.universidad.model;
 
 import programacion3.parcial2.universidad.model.Materia;
 import programacion3.parcial2.universidad.model.Profesor;

@@ -7,14 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import programacion3.parcial2.universidad.controller.MateriaController;
-import programacion3.parcial2.universidad.controller.ProfesorController;
-import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.enumm.TipoMateria;
 import programacion3.parcial2.universidad.mapping.dto.MateriaDto;
-import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.model.Universidad;
 import programacion3.parcial2.universidad.util.MateriaUtil;
-import programacion3.parcial2.universidad.util.ProfesorUtil;
 
 import java.util.Optional;
 import java.util.function.Predicate;

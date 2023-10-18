@@ -10,4 +10,9 @@ public record ProfesorDto(
         String telefono,
         String programa,
         String profesion) {
+
+    @Override
+    public String toString() {
+        return nombres + " " + apellidos;
+    }
 }

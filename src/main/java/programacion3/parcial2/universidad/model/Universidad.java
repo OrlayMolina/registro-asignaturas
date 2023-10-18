@@ -11,9 +11,9 @@ public class Universidad {
 
     private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
     private ArrayList<Profesor> listaProfesores = new ArrayList<>();
-
     private ArrayList<Materia> listaMaterias = new ArrayList<>();
 
+    private ArrayList<Curso> listaCursos = new ArrayList<>();
     public ArrayList<Estudiante> getListaEstudiantes() {
         return listaEstudiantes;
     }
@@ -24,6 +24,10 @@ public class Universidad {
 
     public ArrayList<Materia> getListaMaterias() {
         return listaMaterias;
+    }
+
+    public ArrayList<Curso> getListaCursos() {
+        return listaCursos;
     }
 
     public void agregarEstudiante(Estudiante nuevoEstudiante) throws EstudianteException {

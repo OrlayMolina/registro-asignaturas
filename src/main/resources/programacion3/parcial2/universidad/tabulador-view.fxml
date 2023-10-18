@@ -76,7 +76,7 @@
                   <children>
                     <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
                       <items>
-                        <fx:include source="asignacion-estudiantes-view.fxml" />
+                        <fx:include source="asignar-curso-view.fxml" />
                       </items>
                     </SplitPane>
                   </children>

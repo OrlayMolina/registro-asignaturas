@@ -1,5 +1,6 @@
 package programacion3.parcial2.universidad.mapping.mappers;
 
+import programacion3.parcial2.universidad.mapping.dto.AsignacionDto;
 import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.dto.MateriaDto;
 import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
@@ -12,6 +13,7 @@ import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 import programacion3.parcial2.universidad.model.Materia;
 import programacion3.parcial2.universidad.model.Profesor;
+import programacion3.parcial2.universidad.model.Asignacion;
 
 @Mapper
 public interface UniversidadMapper {
@@ -41,4 +43,12 @@ public interface UniversidadMapper {
 
     @IterableMapping(qualifiedByName = "materiaToMateriaDto")
     List<MateriaDto> getMateriaDto(List<Materia> listaMaterias);
+
+    @Named("asignacionToAsignacionDto")
+    AsignacionDto asignacionToAsignacionDto(Asignacion asignacion);
+
+    Asignacion asignacionDtoToAsignacion(AsignacionDto asignacionDto);
+
+    @IterableMapping(qualifiedByName = "asignacionToAsignacionDto")
+    List<Asignacion> getAsignacionDto(List<Asignacion> listaAsignaciones);
 }

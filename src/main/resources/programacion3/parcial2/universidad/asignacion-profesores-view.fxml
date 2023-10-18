@@ -13,7 +13,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="359.0" prefWidth="587.0" stylesheets="@tema.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programacion3.parcial2.universidad.viewController.AsignacionProfesoresViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="48.0" layoutX="6.0" layoutY="86.0" stroke="#949393" strokeType="INSIDE" width="578.0" />
@@ -62,9 +61,9 @@
                </font>
             </Label>
             <TextField fx:id="txfCodigo" prefHeight="69.0" prefWidth="98.0" promptText="Código ..." GridPane.rowIndex="2" />
-            <TextField fx:id="txfCodigoMateria" prefHeight="112.0" prefWidth="98.0" promptText="Cód. Materia ..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txfCodigoMateria" editable="false" prefHeight="112.0" prefWidth="98.0" promptText="Cód. Materia ..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <ComboBox fx:id="cmbMateria" prefHeight="98.0" prefWidth="98.0" promptText="Materia ..." GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <TextField fx:id="txfCodigoProfesor" prefHeight="108.0" prefWidth="80.0" promptText="Cód. Profesor" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <TextField fx:id="txfCodigoProfesor" editable="false" prefHeight="108.0" prefWidth="80.0" promptText="Cód. Profesor" GridPane.columnIndex="6" GridPane.rowIndex="2" />
             <ComboBox fx:id="cmbProfesor" prefHeight="98.0" prefWidth="110.0" promptText="Profesor ..." GridPane.columnIndex="8" GridPane.rowIndex="2" />
          </children>
       </GridPane>

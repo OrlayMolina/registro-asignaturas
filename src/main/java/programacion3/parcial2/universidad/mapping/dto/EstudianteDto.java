@@ -10,4 +10,9 @@ public record EstudianteDto(
         String edad,
         String correo,
         String telefono) {
+
+    @Override
+    public String toString() {
+        return nombres + " " + apellidos;
+    }
 }
