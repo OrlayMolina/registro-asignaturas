@@ -1,5 +1,6 @@
 package programacion3.parcial2.universidad.model;
 
+import programacion3.parcial2.universidad.exception.AsignacionException;
 import programacion3.parcial2.universidad.exception.EstudianteException;
 import programacion3.parcial2.universidad.exception.MateriaException;
 import programacion3.parcial2.universidad.exception.ProfesorException;
@@ -13,6 +14,7 @@ public class Universidad {
     private ArrayList<Profesor> listaProfesores = new ArrayList<>();
     private ArrayList<Materia> listaMaterias = new ArrayList<>();
 
+    private ArrayList<Asignacion> listaAsignaciones = new ArrayList<>();
     private ArrayList<Curso> listaCursos = new ArrayList<>();
     public ArrayList<Estudiante> getListaEstudiantes() {
         return listaEstudiantes;
@@ -24,6 +26,10 @@ public class Universidad {
 
     public ArrayList<Materia> getListaMaterias() {
         return listaMaterias;
+    }
+
+    public ArrayList<Asignacion> getListaAsignaciones() {
+        return listaAsignaciones;
     }
 
     public ArrayList<Curso> getListaCursos() {
@@ -129,6 +135,36 @@ public class Universidad {
     }
 
 
+    public void agregarAsignacion(Asignacion nuevaAsignacion) throws AsignacionException {
+        getListaAsignaciones().add(nuevaAsignacion);
+    }
+
+    public Boolean eliminarAsignacion(String codigo) throws AsignacionException {
+        Asignacion asignacion = null;
+        boolean flagExiste = false;
+        asignacion = obtenerAsignacion(codigo);
+        if(asignacion == null)
+            throw new AsignacionException("La asignacion a eliminar no existe");
+        else{
+            getListaMaterias().remove(asignacion);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public boolean actualizarAsignacion(String codigo, Asignacion asignacion) throws AsignacionException {
+        Asignacion asignacionActual = obtenerAsignacion(codigo);
+        if(asignacionActual == null)
+            throw new AsignacionException("La asignacion a actualizar no existe");
+        else{
+            asignacionActual.setCodigo(asignacion.getCodigo());
+            asignacionActual.setMateriaAsociada(asignacion.getMateriaAsociada());
+            asignacionActual.setProfesorAsociado(asignacion.getProfesorAsociado());
+            return true;
+        }
+    }
+
+
     public Estudiante obtenerEstudiante(String codigo) {
         Estudiante estudianteEncontrado = null;
         for (Estudiante estudiante : getListaEstudiantes()) {
@@ -162,6 +198,17 @@ public class Universidad {
         return materiaEncontrado;
     }
 
+    public Asignacion obtenerAsignacion(String codigo) {
+        Asignacion asignacionEncontrado = null;
+        for (Asignacion asignacion : getListaAsignaciones()) {
+            if(asignacion.getCodigo().equalsIgnoreCase(codigo)){
+                asignacionEncontrado = asignacion;
+                break;
+            }
+        }
+        return asignacionEncontrado;
+    }
+
     public boolean verificarEstudianteExistente(String codigo) throws EstudianteException {
         if(estudianteExiste(codigo)){
             throw new EstudianteException("El estudiante con código: "+codigo+" ya existe");
@@ -181,6 +228,14 @@ public class Universidad {
     public boolean verificarMateriaExistente(String codigo) throws MateriaException {
         if(materiaExiste(codigo)){
             throw new MateriaException("La materia con código: "+codigo+" ya existe");
+        }else{
+            return false;
+        }
+    }
+
+    public boolean verificarAsignacionExistente(String codigo) throws AsignacionException {
+        if(asignacionExiste(codigo)){
+            throw new AsignacionException("La asignación con código: "+codigo+" ya existe");
         }else{
             return false;
         }
@@ -217,6 +272,17 @@ public class Universidad {
             }
         }
         return materiaEncontrado;
+    }
+
+    public boolean asignacionExiste(String codigo) {
+        boolean asignacionEncontrado = false;
+        for (Asignacion asignacion : getListaAsignaciones()) {
+            if(asignacion.getCodigo().equalsIgnoreCase(codigo)){
+                asignacionEncontrado = true;
+                break;
+            }
+        }
+        return asignacionEncontrado;
     }
 
     public boolean comprobarAcceso(String usuario, String password){

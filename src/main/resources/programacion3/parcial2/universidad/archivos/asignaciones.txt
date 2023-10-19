@@ -1,0 +1,1 @@
+002@@Materia{codigo='004', nombre='Teoría de Lenguajes Formales', intensidad='4 horas a la semana', tipoMateria=Teórica_Práctica}@@programa=Ingenieria_de_Sistemas_y_Computación, profesion='Topografa

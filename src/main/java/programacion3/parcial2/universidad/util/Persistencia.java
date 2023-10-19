@@ -3,10 +3,7 @@ package programacion3.parcial2.universidad.util;
 import programacion3.parcial2.universidad.enumm.Programa;
 import programacion3.parcial2.universidad.enumm.Sexo;
 import programacion3.parcial2.universidad.enumm.TipoMateria;
-import programacion3.parcial2.universidad.model.Estudiante;
-import programacion3.parcial2.universidad.model.Materia;
-import programacion3.parcial2.universidad.model.Profesor;
-import programacion3.parcial2.universidad.model.Universidad;
+import programacion3.parcial2.universidad.model.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,6 +15,8 @@ public class Persistencia {
     public static final String RUTA_ARCHIVO_ESTUDIANTES = "src/main/resources/programacion3/parcial2/universidad/archivos/estudiantes.txt";
     public static final String RUTA_ARCHIVO_PROFESORES = "src/main/resources/programacion3/parcial2/universidad/archivos/profesores.txt";
     public static final String RUTA_ARCHIVO_MATERIAS = "src/main/resources/programacion3/parcial2/universidad/archivos/materias.txt";
+
+    public static final String RUTA_ARCHIVO_ASIGNACIONES = "src/main/resources/programacion3/parcial2/universidad/archivos/asignaciones.txt";
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
     }
@@ -49,6 +48,15 @@ public class Persistencia {
             contenido += materia.getCodigo() + "@@" + materia.getNombre() + "@@" + materia.getIntensidad() + "@@" + materia.getTipoMateria() + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_MATERIAS, contenido, false);
+    }
+
+    public static void guardarAsignacion(ArrayList<Asignacion> listaAsignaciones) throws IOException {
+        // TODO Auto-generated method stub
+        String contenido = "";
+        for (Asignacion asignacion : listaAsignaciones) {
+            contenido += asignacion.getCodigo() + "@@" + asignacion.getMateriaAsociada() + "@@" + asignacion.getProfesorAsociado() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ASIGNACIONES, contenido, false);
     }
 
     public static void cargarDatosArchivos(Universidad universidad) throws FileNotFoundException, IOException {
@@ -130,5 +138,41 @@ public class Persistencia {
             materias.add(materia);
         }
         return materias;
+    }
+
+    public static void cargarDatosAsignaciones(Universidad universidad) throws FileNotFoundException, IOException {
+
+        ArrayList<Asignacion> asignacionesCargados = cargarAsignaciones(universidad);
+        if (asignacionesCargados.size() > 0)
+            universidad.getListaAsignaciones().addAll(asignacionesCargados);
+
+    }
+
+    public static ArrayList<Asignacion> cargarAsignaciones(Universidad universidad) throws FileNotFoundException, IOException {
+        ArrayList<Asignacion> asignaciones = new ArrayList<Asignacion>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ASIGNACIONES);
+
+        for (String linea : contenido) {
+            String[] partes = linea.split("@@");
+            if (partes.length >= 3) {
+                String codigo = partes[0];
+                String materiaCodigo = partes[1];
+                String profesorCodigo = partes[2];
+
+                // Busca la materia y el profesor correspondientes en la universidad
+                Materia materiaAsociada = universidad.obtenerMateria(materiaCodigo);
+                Profesor profesorAsociado = universidad.obtenerProfesor(profesorCodigo);
+
+                if (materiaAsociada != null && profesorAsociado != null) {
+                    Asignacion asignacion = new Asignacion();
+                    asignacion.setCodigo(codigo);
+                    asignacion.setMateriaAsociada(materiaAsociada);
+                    asignacion.setProfesorAsociado(profesorAsociado);
+                    asignaciones.add(asignacion);
+                }
+            }
+        }
+
+        return asignaciones;
     }
 }
