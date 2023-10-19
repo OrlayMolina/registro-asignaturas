@@ -20,8 +20,6 @@ public class ModelFactoryController {
     private Universidad universidad;
     private UniversidadMapper mapper = UniversidadMapper.INSTANCE;
 
-    private Persistencia persistencia = new Persistencia();
-
     private static class SingletonHolder {
         private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
     }
@@ -249,6 +247,10 @@ public class ModelFactoryController {
 
     public List<MateriaDto> obtenerMaterias() {
         return  mapper.getMateriaDto(universidad.getListaMaterias());
+    }
+
+    public List<AsignacionDto> obtenerAsignaciones() {
+        return  mapper.getAsignacionDto(universidad.getListaAsignaciones());
     }
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {

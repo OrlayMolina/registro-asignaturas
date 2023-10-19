@@ -128,6 +128,7 @@ public class AsignacionProfesoresViewController {
 
     private void initView() {
         initDataBinding();
+        obtenerAignaciones();
         mostrarMateria();
         mostrarProfesor();
         getListaMaterias();
@@ -233,6 +234,10 @@ public class AsignacionProfesoresViewController {
         tableAsignaciones.getSelectionModel().clearSelection();
         tableAsignaciones.setItems(listaAsignacionesDto);
         listenerSelection();
+    }
+
+    private void obtenerAignaciones() {
+        listaAsignacionesDto.addAll(asignacionControllerService.obtenerAsignaciones());
     }
 
     private AsignacionDto construirAsignacionDto() {

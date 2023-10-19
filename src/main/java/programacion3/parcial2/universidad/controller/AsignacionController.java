@@ -39,4 +39,8 @@ public class AsignacionController {
     public List<ProfesorDto> obtenerProfesores(){
         return modelFactoryController.obtenerProfesores();
     }
+
+    public List<AsignacionDto> obtenerAsignaciones() {
+        return modelFactoryController.obtenerAsignaciones();
+    }
 }

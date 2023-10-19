@@ -62,9 +62,9 @@
             </Label>
             <TextField fx:id="txfCodigo" prefHeight="69.0" prefWidth="98.0" promptText="Código ..." GridPane.rowIndex="2" />
             <TextField fx:id="txfCodigoMateria" editable="false" prefHeight="112.0" prefWidth="98.0" promptText="Cód. Materia ..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbMateria" onAction="#llenarCodigoMateria" prefHeight="98.0" prefWidth="98.0" promptText="Materia ..." GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbMateria" onAction="#llenarCodigoMateria" prefHeight="98.0" prefWidth="98.0" promptText="- Seleccione una Materia -" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <TextField fx:id="txfCodigoProfesor" editable="false" prefHeight="108.0" prefWidth="80.0" promptText="Cód. Profesor" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbProfesor" onAction="#llenarCodigoProfesor" prefHeight="98.0" prefWidth="110.0" promptText="Profesor ..." GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbProfesor" onAction="#llenarCodigoProfesor" prefHeight="98.0" prefWidth="110.0" promptText="- Seleccione un Profesor -" GridPane.columnIndex="8" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane layoutX="29.0" layoutY="95.0">

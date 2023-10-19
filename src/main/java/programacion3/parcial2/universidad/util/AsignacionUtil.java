@@ -12,19 +12,19 @@ public class AsignacionUtil {
     }
 
     public static Predicate<AsignacionDto> buscarPorCodigoMateria(String codigoMateria){
-        return asignacionDto -> asignacionDto.getMateriaDto().codigo().contains(codigoMateria);
+        return asignacionDto -> asignacionDto.codigoMateria().contains(codigoMateria);
     }
 
     public static Predicate<AsignacionDto> buscarPorMateria(String materia){
-        return asignacionDto -> asignacionDto.getMateriaDto().nombre().contains(materia);
+        return asignacionDto -> asignacionDto.nombreMateria().contains(materia);
     }
 
     public static Predicate<AsignacionDto> buscarPorCodigoProfesor(String codigoProfesor){
-        return asignacionDto -> asignacionDto.getProfesorDto().codigo().contains(codigoProfesor);
+        return asignacionDto -> asignacionDto.codigoProfesor().contains(codigoProfesor);
     }
 
     public static Predicate<AsignacionDto> buscarPorProfesor(String profesor){
-        return asignacionDto -> asignacionDto.getProfesorDto().toString().contains(profesor);
+        return asignacionDto -> asignacionDto.profesor().contains(profesor);
     }
 
     public static Predicate<AsignacionDto> buscarPorTodo(String codigo, String codigoMateria, String materia, String codigoProfesor,

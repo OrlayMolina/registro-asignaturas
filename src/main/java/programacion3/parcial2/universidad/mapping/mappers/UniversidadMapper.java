@@ -50,5 +50,5 @@ public interface UniversidadMapper {
     Asignacion asignacionDtoToAsignacion(AsignacionDto asignacionDto);
 
     @IterableMapping(qualifiedByName = "asignacionToAsignacionDto")
-    List<Asignacion> getAsignacionDto(List<Asignacion> listaAsignaciones);
+    List<AsignacionDto> getAsignacionDto(List<Asignacion> listaAsignaciones);
 }

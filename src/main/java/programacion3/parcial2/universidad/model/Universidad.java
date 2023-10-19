@@ -146,7 +146,7 @@ public class Universidad {
         if(asignacion == null)
             throw new AsignacionException("La asignacion a eliminar no existe");
         else{
-            getListaMaterias().remove(asignacion);
+            getListaAsignaciones().remove(asignacion);
             flagExiste = true;
         }
         return flagExiste;
