@@ -155,11 +155,13 @@ public class Universidad {
     public boolean actualizarAsignacion(String codigo, Asignacion asignacion) throws AsignacionException {
         Asignacion asignacionActual = obtenerAsignacion(codigo);
         if(asignacionActual == null)
-            throw new AsignacionException("La asignacion a actualizar no existe");
+            throw new AsignacionException("La asignación a actualizar no existe");
         else{
             asignacionActual.setCodigo(asignacion.getCodigo());
-            asignacionActual.setMateriaAsociada(asignacion.getMateriaAsociada());
-            asignacionActual.setProfesorAsociado(asignacion.getProfesorAsociado());
+            asignacionActual.setCodigoMateria(asignacion.getCodigoMateria());
+            asignacionActual.setNombreMateria(asignacion.getNombreMateria());
+            asignacionActual.setCodigoProfesor(asignacion.getCodigoProfesor());
+            asignacionActual.setProfesor(asignacion.getProfesor());
             return true;
         }
     }

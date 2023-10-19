@@ -6,8 +6,10 @@ import programacion3.parcial2.universidad.model.Profesor;
 public class Asignacion {
 
     private String codigo;
-    private Materia materiaAsociada;
-    private Profesor profesorAsociado;
+    private String codigoMateria;
+    private String nombreMateria;
+    private String codigoProfesor;
+    private String profesor;
 
     public Asignacion(){
 
@@ -21,19 +23,36 @@ public class Asignacion {
         this.codigo = codigo;
     }
 
-    public Materia getMateriaAsociada() {
-        return materiaAsociada;
+    public String getCodigoMateria() {
+        return codigoMateria;
     }
 
-    public void setMateriaAsociada(Materia materiaAsociada) {
-        this.materiaAsociada = materiaAsociada;
+    public void setCodigoMateria(String codigoMateria) {
+        this.codigoMateria = codigoMateria;
     }
 
-    public Profesor getProfesorAsociado() {
-        return profesorAsociado;
+    public String getNombreMateria() {
+        return nombreMateria;
     }
 
-    public void setProfesorAsociado(Profesor profesorAsociado) {
-        this.profesorAsociado = profesorAsociado;
+    public void setNombreMateria(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
     }
+
+    public String getCodigoProfesor() {
+        return codigoProfesor;
+    }
+
+    public void setCodigoProfesor(String codigoProfesor) {
+        this.codigoProfesor = codigoProfesor;
+    }
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+
 }

@@ -54,7 +54,7 @@ public class Persistencia {
         // TODO Auto-generated method stub
         String contenido = "";
         for (Asignacion asignacion : listaAsignaciones) {
-            contenido += asignacion.getCodigo() + "@@" + asignacion.getMateriaAsociada() + "@@" + asignacion.getProfesorAsociado() + "\n";
+            contenido += asignacion.getCodigo() + "@@" + asignacion.getCodigoMateria() + "@@" + asignacion.getNombreMateria() + "@@" + asignacion.getCodigoProfesor() + "@@" + asignacion.getProfesor() + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ASIGNACIONES, contenido, false);
     }
@@ -142,37 +142,27 @@ public class Persistencia {
 
     public static void cargarDatosAsignaciones(Universidad universidad) throws FileNotFoundException, IOException {
 
-        ArrayList<Asignacion> asignacionesCargados = cargarAsignaciones(universidad);
+        ArrayList<Asignacion> asignacionesCargados = cargarAsignaciones();
         if (asignacionesCargados.size() > 0)
             universidad.getListaAsignaciones().addAll(asignacionesCargados);
 
     }
 
-    public static ArrayList<Asignacion> cargarAsignaciones(Universidad universidad) throws FileNotFoundException, IOException {
+    public static ArrayList<Asignacion> cargarAsignaciones() throws FileNotFoundException, IOException {
         ArrayList<Asignacion> asignaciones = new ArrayList<Asignacion>();
         ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ASIGNACIONES);
+        String linea = "";
+        for (int i = 0; i < contenido.size(); i++) {
+            linea = contenido.get(i);//juan@@arias@@125454@@Armenia@@uni1@@@12454@@125444
+            Asignacion asignacion = new Asignacion();
+            asignacion.setCodigo(linea.split("@@")[0]);
+            asignacion.setCodigoMateria(linea.split("@@")[1]);
+            asignacion.setNombreMateria(linea.split("@@")[2]);
+            asignacion.setCodigoProfesor(linea.split("@@")[3]);
+            asignacion.setProfesor(linea.split("@@")[4]);
 
-        for (String linea : contenido) {
-            String[] partes = linea.split("@@");
-            if (partes.length >= 3) {
-                String codigo = partes[0];
-                String materiaCodigo = partes[1];
-                String profesorCodigo = partes[2];
-
-                // Busca la materia y el profesor correspondientes en la universidad
-                Materia materiaAsociada = universidad.obtenerMateria(materiaCodigo);
-                Profesor profesorAsociado = universidad.obtenerProfesor(profesorCodigo);
-
-                if (materiaAsociada != null && profesorAsociado != null) {
-                    Asignacion asignacion = new Asignacion();
-                    asignacion.setCodigo(codigo);
-                    asignacion.setMateriaAsociada(materiaAsociada);
-                    asignacion.setProfesorAsociado(profesorAsociado);
-                    asignaciones.add(asignacion);
-                }
-            }
+            asignaciones.add(asignacion);
         }
-
         return asignaciones;
     }
 }

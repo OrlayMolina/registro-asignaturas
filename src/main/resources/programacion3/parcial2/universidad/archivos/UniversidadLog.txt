@@ -162,3 +162,27 @@ oct. 19, 2023 12:26:36 A. M. programacion3.parcial2.universidad.util.ArchivoUti
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
 oct. 19, 2023 12:26:54 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 9:02:19 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 9:02:40 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 9:03:35 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 9:05:26 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 9:05:43 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 9:09:14 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 9:09:50 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 9:15:27 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 9:15:43 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 10:25:51 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 10:26:04 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-19
+oct. 19, 2023 10:27:47 A. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19

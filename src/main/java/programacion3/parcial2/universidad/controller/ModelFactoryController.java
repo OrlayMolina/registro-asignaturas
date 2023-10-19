@@ -251,7 +251,6 @@ public class ModelFactoryController {
         return  mapper.getMateriaDto(universidad.getListaMaterias());
     }
 
-
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }

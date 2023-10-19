@@ -96,12 +96,26 @@ public class AsignacionProfesoresViewController {
 
     @FXML
     void llenarCodigoMateria(ActionEvent event) {
-        txfCodigoMateria.setText(cmbMateria.getSelectionModel().getSelectedItem().codigo());
+        llenarCodigoMateria();
+    }
+
+    private void llenarCodigoMateria(){
+        MateriaDto materiaSeleccionado = cmbMateria.getSelectionModel().getSelectedItem();
+        if (materiaSeleccionado != null) {
+            txfCodigoMateria.setText(materiaSeleccionado.codigo());
+        }
     }
 
     @FXML
     void llenarCodigoProfesor(ActionEvent event) {
-        txfCodigoProfesor.setText(cmbProfesor.getSelectionModel().getSelectedItem().codigo());
+        llenarCodigoProfesor();
+    }
+
+    private void llenarCodigoProfesor(){
+        ProfesorDto profesorSeleccionado = cmbProfesor.getSelectionModel().getSelectedItem();
+        if (profesorSeleccionado != null) {
+            txfCodigoProfesor.setText(profesorSeleccionado.codigo());
+        }
     }
 
 
@@ -125,10 +139,10 @@ public class AsignacionProfesoresViewController {
 
     private void initDataBinding() {
         colCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigo()));
-        colCodigoMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMateriaDto().codigo()));
-        colMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMateriaDto().nombre()));
-        colCodigoProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getProfesorDto().codigo()));
-        colProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getProfesorDto().toString()));
+        colCodigoMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigoMateria()));
+        colMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreMateria()));
+        colCodigoProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigoProfesor()));
+        colProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().toString()));
     }
 
     private void listenerSelection() {
@@ -223,10 +237,12 @@ public class AsignacionProfesoresViewController {
 
     private AsignacionDto construirAsignacionDto() {
         String codigo = txfCodigo.getText();
-        MateriaDto materiaSeleccionada = cmbMateria.getValue();
-        ProfesorDto profesorSeleccionado = cmbProfesor.getValue();
+        String codigoMateria = txfCodigoMateria.getText();
+        String materia = String.valueOf(cmbMateria.getValue());
+        String codigoProfesor = txfCodigoProfesor.getText();
+        String profesor = String.valueOf(cmbProfesor.getValue());
 
-        return new AsignacionDto(codigo, materiaSeleccionada, profesorSeleccionado);
+        return new AsignacionDto(codigo, codigoMateria, materia, codigoProfesor, profesor);
     }
 
 
@@ -257,9 +273,9 @@ public class AsignacionProfesoresViewController {
         if(asignacionSeleccionada != null){
             txfCodigo.setText(asignacionSeleccionada.codigo());
             txfCodigoMateria.setText(asignacionSeleccionada.codigo());
-            cmbMateria.setValue(asignacionSeleccionada.materiaAsociada());
-            txfCodigoProfesor.setText(asignacionSeleccionada.codigo());
-            cmbProfesor.setValue(asignacionSeleccionada.profesorAsociado());
+            cmbMateria.setValue(asignacionSeleccionada.getMateriaDto());
+            txfCodigoProfesor.setText(asignacionSeleccionada.codigoProfesor());
+            cmbProfesor.setValue(asignacionSeleccionada.getProfesorDto());
 
         }
     }
@@ -278,13 +294,13 @@ public class AsignacionProfesoresViewController {
         String mensaje = "";
         if(asignacionDto.codigo() == null || asignacionDto.codigo().equals(""))
             mensaje += "El código de la asignación es invalido \n" ;
-        if(asignacionDto.getMateriaDto().codigo() == null || asignacionDto.getMateriaDto().codigo() .equals(""))
+        if(asignacionDto.codigoMateria() == null || asignacionDto.codigoMateria() .equals(""))
             mensaje += "El código de la materia es invalido \n" ;
-        if(asignacionDto.getMateriaDto().nombre() == null || asignacionDto.getMateriaDto().nombre() .equals(""))
+        if(asignacionDto.nombreMateria() == null || asignacionDto.nombreMateria() .equals(""))
             mensaje += "El nombre de la materia es invalido \n" ;
-        if(asignacionDto.getProfesorDto().codigo() == null || asignacionDto.getProfesorDto().codigo() .equals(""))
+        if(asignacionDto.codigoProfesor() == null || asignacionDto.codigoProfesor() .equals(""))
             mensaje += "El código del profesor es invalido \n" ;
-        if(asignacionDto.getProfesorDto().toString() .equals(""))
+        if(asignacionDto.profesor() == null || asignacionDto.profesor() .equals(""))
             mensaje += "El nombre del profesor es invalidoo \n" ;
         if(mensaje.equals("")){
             return true;

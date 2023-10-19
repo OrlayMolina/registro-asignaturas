@@ -54,6 +54,7 @@ public class LoginViewController {
             cerrarVentana(btnIniciarSesion);
             main.cargarVentanaTabulador();
         }else{
+            pwfContrasenia.setText("");
             mostrarMensaje("Notificación de Acceso", "Inicio de Sesión", "El inicio de sesion es incorrecto", Alert.AlertType.ERROR);
         }
     }
