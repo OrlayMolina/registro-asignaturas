@@ -2,6 +2,7 @@ package programacion3.parcial2.universidad.model;
 
 public class Curso {
 
+    private String codigo;
     private String codigoMateria;
     private String nombreMateria;
     private String codigoEstudiante;
@@ -9,6 +10,14 @@ public class Curso {
 
     public Curso(){
 
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getCodigoMateria() {

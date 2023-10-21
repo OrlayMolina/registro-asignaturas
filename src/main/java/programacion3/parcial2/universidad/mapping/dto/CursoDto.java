@@ -1,6 +1,8 @@
 package programacion3.parcial2.universidad.mapping.dto;
 
 public record CursoDto(
+
+        String codigo,
         String codigoMateria,
         String nombreMateria,
         String codigoEstudiante,

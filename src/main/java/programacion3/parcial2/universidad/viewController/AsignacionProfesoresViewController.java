@@ -97,23 +97,11 @@ public class AsignacionProfesoresViewController {
         llenarCodigoMateria();
     }
 
-    private void llenarCodigoMateria(){
-        MateriaDto materiaSeleccionado = cmbMateria.getSelectionModel().getSelectedItem();
-        if (materiaSeleccionado != null) {
-            txfCodigoMateria.setText(materiaSeleccionado.codigo());
-        }
-    }
+
 
     @FXML
     void llenarCodigoProfesor(ActionEvent event) {
         llenarCodigoProfesor();
-    }
-
-    private void llenarCodigoProfesor(){
-        ProfesorDto profesorSeleccionado = cmbProfesor.getSelectionModel().getSelectedItem();
-        if (profesorSeleccionado != null) {
-            txfCodigoProfesor.setText(profesorSeleccionado.codigo());
-        }
     }
 
 
@@ -126,7 +114,7 @@ public class AsignacionProfesoresViewController {
 
     private void initView() {
         initDataBinding();
-        obtenerAignaciones();
+        obtenerAsignaciones();
         mostrarMateria();
         mostrarProfesor();
         getListaMaterias();
@@ -235,7 +223,21 @@ public class AsignacionProfesoresViewController {
         listenerSelection();
     }
 
-    private void obtenerAignaciones() {
+    private void llenarCodigoMateria(){
+        MateriaDto materiaSeleccionado = cmbMateria.getSelectionModel().getSelectedItem();
+        if (materiaSeleccionado != null) {
+            txfCodigoMateria.setText(materiaSeleccionado.codigo());
+        }
+    }
+
+    private void llenarCodigoProfesor(){
+        ProfesorDto profesorSeleccionado = cmbProfesor.getSelectionModel().getSelectedItem();
+        if (profesorSeleccionado != null) {
+            txfCodigoProfesor.setText(profesorSeleccionado.codigo());
+        }
+    }
+
+    private void obtenerAsignaciones() {
         listaAsignacionesDto.addAll(asignacionControllerService.obtenerAsignaciones());
     }
 

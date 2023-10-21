@@ -1,19 +1,13 @@
 package programacion3.parcial2.universidad.mapping.mappers;
 
-import programacion3.parcial2.universidad.mapping.dto.AsignacionDto;
-import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
-import programacion3.parcial2.universidad.mapping.dto.MateriaDto;
-import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
-import programacion3.parcial2.universidad.model.Estudiante;
+import programacion3.parcial2.universidad.mapping.dto.*;
+import programacion3.parcial2.universidad.model.*;
 
 import java.util.List;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
-import programacion3.parcial2.universidad.model.Materia;
-import programacion3.parcial2.universidad.model.Profesor;
-import programacion3.parcial2.universidad.model.Asignacion;
 
 @Mapper
 public interface UniversidadMapper {
@@ -51,4 +45,12 @@ public interface UniversidadMapper {
 
     @IterableMapping(qualifiedByName = "asignacionToAsignacionDto")
     List<AsignacionDto> getAsignacionDto(List<Asignacion> listaAsignaciones);
+
+    @Named("cursoToCursoDto")
+    CursoDto cursoToCursoDto(Curso curso);
+
+    Curso cursoDtoToCurso(CursoDto cursoDto);
+
+    @IterableMapping(qualifiedByName = "cursoToCursoDto")
+    List<CursoDto> getCursoDto(List<Curso> listaCursos);
 }
