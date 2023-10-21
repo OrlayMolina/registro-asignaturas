@@ -214,3 +214,37 @@ oct. 19, 2023 12:17:38 P. M. programacion3.parcial2.universidad.util.ArchivoUti
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
 oct. 19, 2023 12:19:54 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 12:34:21 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 12:41:28 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 8:10:03 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 8:18:45 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 8:23:54 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 8:29:41 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 11:26:14 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 11:29:00 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 11:49:13 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 19, 2023 11:50:07 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-19
+oct. 20, 2023 1:34:20 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 1:46:45 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 1:54:17 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 2:09:12 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 2:10:17 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 2:12:01 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-20
+oct. 20, 2023 2:12:21 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-20

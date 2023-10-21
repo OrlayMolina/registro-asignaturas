@@ -2,35 +2,44 @@ package programacion3.parcial2.universidad.model;
 
 public class Curso {
 
-    private Materia materiaAsociada;
-    private Profesor profesorAsociado;
-    private Estudiante estudianteAsociado;
+    private String codigoMateria;
+    private String nombreMateria;
+    private String codigoEstudiante;
+    private String estudiante;
 
     public Curso(){
 
     }
 
-    public Materia getMateriaAsociada() {
-        return materiaAsociada;
+    public String getCodigoMateria() {
+        return codigoMateria;
     }
 
-    public void setMateriaAsociada(Materia materiaAsociada) {
-        this.materiaAsociada = materiaAsociada;
+    public void setCodigoMateria(String codigoMateria) {
+        this.codigoMateria = codigoMateria;
     }
 
-    public Profesor getProfesorAsociado() {
-        return profesorAsociado;
+    public String getNombreMateria() {
+        return nombreMateria;
     }
 
-    public void setProfesorAsociado(Profesor profesorAsociado) {
-        this.profesorAsociado = profesorAsociado;
+    public void setNombreMateria(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
     }
 
-    public Estudiante getEstudianteAsociado() {
-        return estudianteAsociado;
+    public String getCodigoEstudiante() {
+        return codigoEstudiante;
     }
 
-    public void setEstudianteAsociado(Estudiante estudianteAsociado) {
-        this.estudianteAsociado = estudianteAsociado;
+    public void setCodigoEstudiante(String codigoEstudiante) {
+        this.codigoEstudiante = codigoEstudiante;
+    }
+
+    public String getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(String estudiante) {
+        this.estudiante = estudiante;
     }
 }

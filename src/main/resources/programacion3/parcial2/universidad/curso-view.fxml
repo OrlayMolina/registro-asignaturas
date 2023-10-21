@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 
 
-<AnchorPane prefHeight="359.0" prefWidth="587.0" stylesheets="@tema.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programacion3.parcial2.universidad.viewController.AsignacionCursoViewController">
+<AnchorPane prefHeight="359.0" prefWidth="587.0" stylesheets="@tema.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programacion3.parcial2.universidad.viewController.CursoViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="48.0" layoutX="5.0" layoutY="93.0" stroke="#949393" strokeType="INSIDE" width="577.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="79.0" layoutX="6.0" layoutY="7.0" stroke="#949393" strokeType="INSIDE" width="577.0" />

@@ -8,12 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import programacion3.parcial2.universidad.controller.AsignacionController;
 import programacion3.parcial2.universidad.mapping.dto.AsignacionDto;
-import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
 import programacion3.parcial2.universidad.mapping.dto.MateriaDto;
 import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
 import programacion3.parcial2.universidad.model.Universidad;
 import programacion3.parcial2.universidad.util.AsignacionUtil;
-import programacion3.parcial2.universidad.util.EstudianteUtil;
 
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -227,6 +225,7 @@ public class AsignacionProfesoresViewController {
         Predicate<AsignacionDto> predicado = AsignacionUtil.buscarPorTodo(codigo, codigoMateria, materia, codigoProfesor, profesor);
         ObservableList<AsignacionDto> asignacionesFiltradas = listaAsignacionesDto.filtered(predicado);
         tableAsignaciones.setItems(asignacionesFiltradas);
+
     }
 
     private void cancelarBusqueda(){

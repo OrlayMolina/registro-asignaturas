@@ -1,19 +1,25 @@
 package programacion3.parcial2.universidad.mapping.dto;
 
 public record CursoDto(
-        MateriaDto materiaAsociada,
-        ProfesorDto profesorAsociado,
-        EstudianteDto estudianteAsociado) {
+        String codigoMateria,
+        String nombreMateria,
+        String codigoEstudiante,
+        String estudiante) {
 
-    public MateriaDto getMateriaDto() {
-        return materiaAsociada;
+    public MateriaDto getMateriaDto(){
+        return new MateriaDto(codigoMateria, nombreMateria,"","");
     }
 
-    public ProfesorDto getProfesorDto() {
-        return profesorAsociado;
+    public EstudianteDto getEstudianteDto(){
+        return new EstudianteDto(codigoEstudiante, estudiante,"","", "", "", "");
     }
 
-    public EstudianteDto getEstudianteDto() {
-        return estudianteAsociado;
+    public ProfesorDto getProfesorDto(){
+        return new ProfesorDto("", "","","","","","","","");
+    }
+
+    @Override
+    public String toString() {
+        return getEstudianteDto().toString();
     }
 }

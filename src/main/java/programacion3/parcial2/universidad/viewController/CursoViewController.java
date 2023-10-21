@@ -9,12 +9,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import programacion3.parcial2.universidad.controller.AsignacionController;
 import programacion3.parcial2.universidad.controller.CursoController;
 import programacion3.parcial2.universidad.mapping.dto.*;
 import programacion3.parcial2.universidad.model.Universidad;
 
-public class AsignacionCursoViewController {
+public class CursoViewController {
 
     CursoController cursoControllerService;
     Universidad universidad;
@@ -104,9 +103,9 @@ public class AsignacionCursoViewController {
     private void initDataBinding() {
         colCodigoMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMateriaDto().codigo()));
         colMateria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMateriaDto().nombre()));
-        colProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getProfesorDto().nombres()));
+        colProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getProfesorDto().toString()));
         colCodigoEstudiante.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstudianteDto().codigo()));
-        colNombreEstudiante.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstudianteDto().nombres()));
+        colNombreEstudiante.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstudianteDto().toString()));
 
     }
 

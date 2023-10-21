@@ -8,17 +8,16 @@ public record AsignacionDto(
         String profesor) {
 
     public MateriaDto getMateriaDto(){
-        MateriaDto materiaDto = new MateriaDto(codigoMateria, nombreMateria,"","");
-        return materiaDto;
+        return new MateriaDto(codigoMateria, nombreMateria,"","");
     }
 
     public ProfesorDto getProfesorDto(){
-        ProfesorDto profesorDto = new ProfesorDto(codigoProfesor, profesor,"","","","","","","");
-        return profesorDto;
+        return new ProfesorDto(codigoProfesor, profesor,"","","","","","","");
     }
 
     @Override
     public String toString() {
         return profesor;
     }
+
 }

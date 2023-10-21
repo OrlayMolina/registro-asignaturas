@@ -69,14 +69,14 @@
                 </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Asignación de Estudiantes">
+            <Tab text="Cursos">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 
                   <children>
                     <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="587.0">
                       <items>
-                        <fx:include source="asignar-curso-view.fxml" />
+                        <fx:include source="curso-view.fxml" />
                       </items>
                     </SplitPane>
                   </children>
