@@ -5,6 +5,8 @@ public record CursoDto(
         String codigo,
         String codigoMateria,
         String nombreMateria,
+
+        String nombreProfesor,
         String codigoEstudiante,
         String estudiante) {
 

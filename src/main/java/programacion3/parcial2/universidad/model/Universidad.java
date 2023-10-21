@@ -1,9 +1,6 @@
 package programacion3.parcial2.universidad.model;
 
-import programacion3.parcial2.universidad.exception.AsignacionException;
-import programacion3.parcial2.universidad.exception.EstudianteException;
-import programacion3.parcial2.universidad.exception.MateriaException;
-import programacion3.parcial2.universidad.exception.ProfesorException;
+import programacion3.parcial2.universidad.exception.*;
 
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -166,6 +163,37 @@ public class Universidad {
         }
     }
 
+    public void agregarCurso(Curso nuevoCurso) throws CursoException {
+        getListaCursos().add(nuevoCurso);
+    }
+
+    public Boolean eliminarCurso(String codigo) throws CursoException {
+        Curso curso = null;
+        boolean flagExiste = false;
+        curso = obtenerCurso(codigo);
+        if(curso == null)
+            throw new CursoException("El Curso a eliminar no existe");
+        else{
+            getListaCursos().remove(curso);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public boolean actualizarCurso(String codigo, Curso curso) throws CursoException {
+        Curso cursoActual = obtenerCurso(codigo);
+        if(cursoActual == null)
+            throw new CursoException("El Curso a actualizar no existe");
+        else{
+            cursoActual.setCodigo(curso.getCodigo());
+            cursoActual.setCodigoMateria(curso.getCodigoMateria());
+            cursoActual.setNombreMateria(curso.getNombreMateria());
+            cursoActual.setCodigoEstudiante(curso.getCodigoEstudiante());
+            cursoActual.setEstudiante(curso.getEstudiante());
+            return true;
+        }
+    }
+
 
     public Estudiante obtenerEstudiante(String codigo) {
         Estudiante estudianteEncontrado = null;
@@ -211,6 +239,17 @@ public class Universidad {
         return asignacionEncontrado;
     }
 
+    public Curso obtenerCurso(String codigo) {
+        Curso cursoEncontrado = null;
+        for (Curso curso : getListaCursos()) {
+            if(curso.getCodigo().equalsIgnoreCase(codigo)){
+                cursoEncontrado = curso;
+                break;
+            }
+        }
+        return cursoEncontrado;
+    }
+
     public boolean verificarEstudianteExistente(String codigo) throws EstudianteException {
         if(estudianteExiste(codigo)){
             throw new EstudianteException("El estudiante con código: "+codigo+" ya existe");
@@ -238,6 +277,14 @@ public class Universidad {
     public boolean verificarAsignacionExistente(String codigo) throws AsignacionException {
         if(asignacionExiste(codigo)){
             throw new AsignacionException("La asignación con código: "+codigo+" ya existe");
+        }else{
+            return false;
+        }
+    }
+
+    public boolean verificarCursoExistente(String codigo) throws CursoException {
+        if(cursoExiste(codigo)){
+            throw new CursoException("El Curso con código: "+codigo+" ya existe");
         }else{
             return false;
         }
@@ -285,6 +332,17 @@ public class Universidad {
             }
         }
         return asignacionEncontrado;
+    }
+
+    public boolean cursoExiste(String codigo) {
+        boolean cursoEncontrado = false;
+        for (Curso curso : getListaCursos()) {
+            if(curso.getCodigo().equalsIgnoreCase(codigo)){
+                cursoEncontrado = true;
+                break;
+            }
+        }
+        return cursoEncontrado;
     }
 
     public boolean comprobarAcceso(String usuario, String password){

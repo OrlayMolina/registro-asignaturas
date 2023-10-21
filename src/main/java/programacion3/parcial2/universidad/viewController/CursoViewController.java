@@ -248,10 +248,11 @@ public class CursoViewController {
         String codigo = txfCodigo.getText();
         String codigoMateria = txfCodigoMateria.getText();
         String materia = String.valueOf(cmbMateria.getValue());
+        String profesor = "";
         String codigoEstudiante = txfCodigoEstudiante.getText();
         String estudiante = String.valueOf(cmbEstudiante.getValue());
 
-        return new CursoDto(codigo, codigoMateria, materia, codigoEstudiante, estudiante);
+        return new CursoDto(codigo, codigoMateria, materia, profesor,codigoEstudiante, estudiante);
     }
 
 

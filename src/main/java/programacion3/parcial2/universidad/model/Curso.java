@@ -5,6 +5,7 @@ public class Curso {
     private String codigo;
     private String codigoMateria;
     private String nombreMateria;
+    private String nombreProfesor;
     private String codigoEstudiante;
     private String estudiante;
 
@@ -34,6 +35,14 @@ public class Curso {
 
     public void setNombreMateria(String nombreMateria) {
         this.nombreMateria = nombreMateria;
+    }
+
+    public String getNombreProfesor() {
+        return nombreProfesor;
+    }
+
+    public void setNombreProfesor(String nombreProfesor) {
+        this.nombreProfesor = nombreProfesor;
     }
 
     public String getCodigoEstudiante() {

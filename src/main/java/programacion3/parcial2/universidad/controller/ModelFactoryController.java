@@ -1,13 +1,7 @@
 package programacion3.parcial2.universidad.controller;
 
-import programacion3.parcial2.universidad.exception.AsignacionException;
-import programacion3.parcial2.universidad.exception.EstudianteException;
-import programacion3.parcial2.universidad.exception.MateriaException;
-import programacion3.parcial2.universidad.exception.ProfesorException;
-import programacion3.parcial2.universidad.mapping.dto.AsignacionDto;
-import programacion3.parcial2.universidad.mapping.dto.EstudianteDto;
-import programacion3.parcial2.universidad.mapping.dto.MateriaDto;
-import programacion3.parcial2.universidad.mapping.dto.ProfesorDto;
+import programacion3.parcial2.universidad.exception.*;
+import programacion3.parcial2.universidad.mapping.dto.*;
 import programacion3.parcial2.universidad.mapping.mappers.UniversidadMapper;
 import programacion3.parcial2.universidad.model.*;
 import programacion3.parcial2.universidad.util.Persistencia;
@@ -38,6 +32,7 @@ public class ModelFactoryController {
             Persistencia.cargarDatosProfesores(universidad);
             Persistencia.cargarDatosMaterias(universidad);
             Persistencia.cargarDatosAsignaciones(universidad);
+            Persistencia.cargarDatosCursos(universidad);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -64,6 +59,10 @@ public class ModelFactoryController {
 
     public ArrayList<Asignacion> getListaAsignaciones() {
         return getUniversidad().getListaAsignaciones();
+    }
+
+    public ArrayList<Curso> getListaCursos() {
+        return getUniversidad().getListaCursos();
     }
 
     public boolean agregarEstudiante(EstudianteDto estudianteDto) {
@@ -238,6 +237,48 @@ public class ModelFactoryController {
         }
     }
 
+    public boolean agregarCurso(CursoDto cursoDto) {
+        try{
+            if(!universidad.verificarCursoExistente(cursoDto.codigo())) {
+                Curso curso = mapper.cursoDtoToCurso(cursoDto);
+                getUniversidad().agregarCurso(curso);
+                Persistencia.guardarCurso(getListaCursos());
+            }
+            return true;
+        }catch (CursoException e){
+            e.getMessage();
+            return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean eliminarCurso(String codigo) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getUniversidad().eliminarCurso(codigo);
+            Persistencia.guardarCurso(getListaCursos());
+        } catch (CursoException | IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
+    public boolean actualizarCurso(String codigoActual, CursoDto cursoDto) {
+        try {
+            Curso curso = mapper.cursoDtoToCurso(cursoDto);
+            getUniversidad().actualizarCurso(codigoActual, curso);
+            Persistencia.guardarCurso(getListaCursos());
+            return true;
+        }  catch (CursoException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<EstudianteDto> obtenerEstudiantes() {
         return  mapper.getEstudianteDto(universidad.getListaEstudiantes());
     }
@@ -251,6 +292,10 @@ public class ModelFactoryController {
 
     public List<AsignacionDto> obtenerAsignaciones() {
         return  mapper.getAsignacionDto(universidad.getListaAsignaciones());
+    }
+
+    public List<CursoDto> obtenerCursos() {
+        return  mapper.getCursoDto(universidad.getListaCursos());
     }
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {

@@ -15,8 +15,9 @@ public class Persistencia {
     public static final String RUTA_ARCHIVO_ESTUDIANTES = "src/main/resources/programacion3/parcial2/universidad/archivos/estudiantes.txt";
     public static final String RUTA_ARCHIVO_PROFESORES = "src/main/resources/programacion3/parcial2/universidad/archivos/profesores.txt";
     public static final String RUTA_ARCHIVO_MATERIAS = "src/main/resources/programacion3/parcial2/universidad/archivos/materias.txt";
-
     public static final String RUTA_ARCHIVO_ASIGNACIONES = "src/main/resources/programacion3/parcial2/universidad/archivos/asignaciones.txt";
+
+    public static final String RUTA_ARCHIVO_CURSOS = "src/main/resources/programacion3/parcial2/universidad/archivos/cursos.txt";
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
     }
@@ -55,6 +56,15 @@ public class Persistencia {
         String contenido = "";
         for (Asignacion asignacion : listaAsignaciones) {
             contenido += asignacion.getCodigo() + "@@" + asignacion.getCodigoMateria() + "@@" + asignacion.getNombreMateria() + "@@" + asignacion.getCodigoProfesor() + "@@" + asignacion.getProfesor() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ASIGNACIONES, contenido, false);
+    }
+
+    public static void guardarCurso(ArrayList<Curso> listaCursos) throws IOException {
+        // TODO Auto-generated method stub
+        String contenido = "";
+        for (Curso curso : listaCursos) {
+            contenido += curso.getCodigo() + "@@" + curso.getCodigoMateria() + "@@" + curso.getNombreMateria() + "@@" + curso.getNombreProfesor() + "@@" + curso.getCodigoEstudiante() + "@@" + curso.getEstudiante() + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ASIGNACIONES, contenido, false);
     }
@@ -164,5 +174,32 @@ public class Persistencia {
             asignaciones.add(asignacion);
         }
         return asignaciones;
+    }
+
+    public static void cargarDatosCursos(Universidad universidad) throws FileNotFoundException, IOException {
+
+        ArrayList<Curso> cursosCargados = cargarCursos();
+        if (cursosCargados.size() > 0)
+            universidad.getListaCursos().addAll(cursosCargados);
+
+    }
+
+    public static ArrayList<Curso> cargarCursos() throws FileNotFoundException, IOException {
+        ArrayList<Curso> cursos = new ArrayList<Curso>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ASIGNACIONES);
+        String linea = "";
+        for (int i = 0; i < contenido.size(); i++) {
+            linea = contenido.get(i);//juan@@arias@@125454@@Armenia@@uni1@@@12454@@125444
+            Curso curso = new Curso();
+            curso.setCodigo(linea.split("@@")[0]);
+            curso.setCodigoMateria(linea.split("@@")[1]);
+            curso.setNombreMateria(linea.split("@@")[2]);
+            curso.setNombreProfesor(linea.split("@@")[3]);
+            curso.setCodigoEstudiante(linea.split("@@")[4]);
+            curso.setEstudiante(linea.split("@@")[5]);
+
+            cursos.add(curso);
+        }
+        return cursos;
     }
 }
