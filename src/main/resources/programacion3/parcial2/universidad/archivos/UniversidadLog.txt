@@ -264,3 +264,5 @@ oct. 24, 2023 6:58:44 P. M. programacion3.parcial2.universidad.util.ArchivoUtil
 INFORMACIÓN: Creación de un asignación, acción realizada por Orlay,Asignación creado,2023-10-24
 oct. 24, 2023 6:58:58 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Creación de un curso, acción realizada por Orlay,Curso creado,2023-10-24
+oct. 24, 2023 7:27:05 P. M. programacion3.parcial2.universidad.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Se ha Iniciado la Sesion del usuario: Orlay con el perfil de administrador,Inicio de Sesión,2023-10-24

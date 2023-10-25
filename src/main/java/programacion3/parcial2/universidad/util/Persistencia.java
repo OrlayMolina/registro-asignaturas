@@ -17,6 +17,7 @@ public class Persistencia {
     public static final String RUTA_ARCHIVO_MATERIAS = "src/main/resources/programacion3/parcial2/universidad/archivos/materias.txt";
     public static final String RUTA_ARCHIVO_ASIGNACIONES = "src/main/resources/programacion3/parcial2/universidad/archivos/asignaciones.txt";
     public static final String RUTA_ARCHIVO_CURSOS = "src/main/resources/programacion3/parcial2/universidad/archivos/cursos.txt";
+    public static final String RUTA_ARCHIVO_MODELO_XML = "src/main/resources/persistencia/model.xml";
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
     }
@@ -200,5 +201,29 @@ public class Persistencia {
             cursos.add(curso);
         }
         return cursos;
+    }
+
+    public static Universidad cargarRecursoXML() {
+
+        Universidad universidad = null;
+
+        try {
+            universidad = (Universidad) ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_XML);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return universidad;
+
+    }
+
+    public static void guardarRecursoXML(Universidad universidad) {
+
+        try {
+            ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_XML, universidad);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }

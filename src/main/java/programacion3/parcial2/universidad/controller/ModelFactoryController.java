@@ -10,9 +10,51 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelFactoryController {
+public class ModelFactoryController implements Runnable{
     private Universidad universidad;
     private UniversidadMapper mapper = UniversidadMapper.INSTANCE;
+    Thread hiloServicio1_guardarResourceXml;
+    Thread hiloServicio2_guardarRegistroLog;
+    BoundedSemaphore semaphore = new BoundedSemaphore(1);
+    String mensaje;
+    int nivel;
+    String accion;
+
+    @Override
+    public void run() {
+        Thread hiloActual = Thread.currentThread();
+        ocuparSemaforo();
+        if(hiloActual == hiloServicio1_guardarResourceXml){
+            Persistencia.guardarRecursoXML(universidad);
+            liberarSemaforo();
+        }
+
+        if(hiloActual == hiloServicio2_guardarRegistroLog){
+            Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+            liberarSemaforo();
+
+        }
+
+
+    }
+
+    private void ocuparSemaforo() {
+        try {
+            semaphore.ocupar();
+
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void liberarSemaforo() {
+        try {
+            semaphore.liberar();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 
     private static class SingletonHolder {
         private final static ModelFactoryController eINSTANCE = new ModelFactoryController();

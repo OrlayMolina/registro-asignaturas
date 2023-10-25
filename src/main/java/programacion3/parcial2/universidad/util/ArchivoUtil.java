@@ -1,5 +1,7 @@
 package programacion3.parcial2.universidad.util;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -102,6 +104,28 @@ public class ArchivoUtil {
         }
 
         fechaSistema = año + "-" + mesN + "-" + diaN;
+
+    }
+
+    public static Object cargarRecursoSerializadoXML(String rutaArchivo) throws IOException {
+
+        XMLDecoder decodificadorXML;
+        Object objetoXML;
+
+        decodificadorXML = new XMLDecoder(new FileInputStream(rutaArchivo));
+        objetoXML = decodificadorXML.readObject();
+        decodificadorXML.close();
+        return objetoXML;
+
+    }
+
+    public static void salvarRecursoSerializadoXML(String rutaArchivo, Object objeto) throws IOException {
+
+        XMLEncoder codificadorXML;
+
+        codificadorXML = new XMLEncoder(new FileOutputStream(rutaArchivo));
+        codificadorXML.writeObject(objeto);
+        codificadorXML.close();
 
     }
 }

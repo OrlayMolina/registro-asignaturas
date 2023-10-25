@@ -5,7 +5,7 @@ module programacion3.parcial2.universidad {
     requires java.logging;
     requires java.sql;
     requires org.mapstruct;
-
+    requires java.desktop;
 
 
     opens programacion3.parcial2.universidad to javafx.fxml;
