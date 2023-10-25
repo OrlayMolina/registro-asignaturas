@@ -151,7 +151,7 @@ public class CursoViewController {
                 listaCursoDto.add(cursoDto);
                 mostrarMensaje("Notificación curso", "Curso creado", "El curso se ha creado con éxito", Alert.AlertType.INFORMATION);
                 registrarAcciones("Curso creado",1, "Creación de un curso, acción realizada por " + universidad.nombreProperties());
-                limpiarCamposAsignaciones();
+                limpiarCamposCurso();
 
             }else{
                 mostrarMensaje("Notificación curso", "Curso no creado", "El curso no se ha creado", Alert.AlertType.ERROR);
@@ -171,7 +171,7 @@ public class CursoViewController {
                     listaCursoDto.remove(cursoSeleccionado);
                     cursoSeleccionado = null;
                     tableCurso.getSelectionModel().clearSelection();
-                    limpiarCamposAsignaciones();
+                    limpiarCamposCurso();
                     registrarAcciones("Curso eliminado",1, "Curso eliminado, acción realizada por " + universidad.nombreProperties());
                     mostrarMensaje("Notificación curso", "Curso eliminado", "El curso se ha eliminado con éxito.", Alert.AlertType.INFORMATION);
                 }else{
@@ -198,7 +198,7 @@ public class CursoViewController {
                     listaCursoDto.add(cursoDto);
                     tableCurso.refresh();
                     mostrarMensaje("Notificación curso", "Curso actualizado", "El curso se ha actualizado con éxito.", Alert.AlertType.INFORMATION);
-                    limpiarCamposAsignaciones();
+                    limpiarCamposCurso();
                     registrarAcciones("Curso actualizado",1, "Curso actualizado, acción realizada por " + universidad.nombreProperties());
                 }else{
                     mostrarMensaje("Notificación curso", "Curso no actualizado", "El curso no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
@@ -220,7 +220,7 @@ public class CursoViewController {
     }
 
     private void cancelarBusqueda(){
-        limpiarCamposAsignaciones();
+        limpiarCamposCurso();
         tableCurso.getSelectionModel().clearSelection();
         tableCurso.setItems(listaCursoDto);
         listenerSelection();
@@ -256,7 +256,8 @@ public class CursoViewController {
     }
 
 
-    private void limpiarCamposAsignaciones() {
+    private void limpiarCamposCurso() {
+        txfCodigo.setText("");
         txfCodigoMateria.setText("");
         cmbMateria.setValue(null);
         txfCodigoEstudiante.setText("");

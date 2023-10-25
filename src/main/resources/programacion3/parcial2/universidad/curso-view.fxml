@@ -43,7 +43,7 @@
             <TextField fx:id="txfCodigoEstudiante" editable="false" prefHeight="48.0" prefWidth="120.0" promptText="Código Estudiante ..." GridPane.columnIndex="6" GridPane.rowIndex="2" />
             <ComboBox fx:id="cmbEstudiante" onAction="#llenarCodigoEstudiante" prefHeight="67.0" prefWidth="122.0" promptText="Estudiante ..." GridPane.columnIndex="8" GridPane.rowIndex="2" />
             <Label text="Código:" />
-            <TextField fx:id="txfCodigo" prefHeight="54.0" prefWidth="98.0" text="Código ..." GridPane.rowIndex="2" />
+            <TextField fx:id="txfCodigo" prefHeight="54.0" prefWidth="98.0" promptText="Código ..." GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane layoutX="39.0" layoutY="102.0">

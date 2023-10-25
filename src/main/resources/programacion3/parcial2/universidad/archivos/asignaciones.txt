@@ -1,3 +1,3 @@
-001@@003@@Bases de Datos I@@51236594@@Carlos Alberto Montes Salázar
-002@@003@@Bases de Datos I@@7845123@@Diana Lucía Villamil
-003@@004@@Teoría de Lenguajes Formales@@48562369@@Gloria Yaneth Giraldo
+001@@001@@Ingeniería de Software II@@51236594@@Carlos Alberto Montes Salázar
+002@@003@@Bases de Datos I@@48562369@@Gloria Yaneth Giraldo
+003@@004@@Teoría de Lenguajes Formales@@7845123@@Diana Lucía Villamil

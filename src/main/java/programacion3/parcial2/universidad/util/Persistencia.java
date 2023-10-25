@@ -16,7 +16,6 @@ public class Persistencia {
     public static final String RUTA_ARCHIVO_PROFESORES = "src/main/resources/programacion3/parcial2/universidad/archivos/profesores.txt";
     public static final String RUTA_ARCHIVO_MATERIAS = "src/main/resources/programacion3/parcial2/universidad/archivos/materias.txt";
     public static final String RUTA_ARCHIVO_ASIGNACIONES = "src/main/resources/programacion3/parcial2/universidad/archivos/asignaciones.txt";
-
     public static final String RUTA_ARCHIVO_CURSOS = "src/main/resources/programacion3/parcial2/universidad/archivos/cursos.txt";
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
@@ -66,7 +65,7 @@ public class Persistencia {
         for (Curso curso : listaCursos) {
             contenido += curso.getCodigo() + "@@" + curso.getCodigoMateria() + "@@" + curso.getNombreMateria() + "@@" + curso.getNombreProfesor() + "@@" + curso.getCodigoEstudiante() + "@@" + curso.getEstudiante() + "\n";
         }
-        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ASIGNACIONES, contenido, false);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CURSOS, contenido, false);
     }
 
     public static void cargarDatosArchivos(Universidad universidad) throws FileNotFoundException, IOException {
@@ -186,7 +185,7 @@ public class Persistencia {
 
     public static ArrayList<Curso> cargarCursos() throws FileNotFoundException, IOException {
         ArrayList<Curso> cursos = new ArrayList<Curso>();
-        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ASIGNACIONES);
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_CURSOS);
         String linea = "";
         for (int i = 0; i < contenido.size(); i++) {
             linea = contenido.get(i);//juan@@arias@@125454@@Armenia@@uni1@@@12454@@125444
